@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
 
+    public Text nameText;
+    public Text dialogueText;
+
+    public AudioSource audioKey;
+    public Animator animator;
     public GameObject monJoueur;
     CharacterController scriptController;
 
@@ -20,8 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-
-        Debug.Log("Starting a conversation with " + dialogue.name);
+        animator.SetBool("IsOpen", true);
+        nameText.text = dialogue.name;
 
         sentences.Clear();
 
@@ -44,14 +50,30 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        dialogueText.text = sentence;
+
+        StopAllCoroutines();
+        StartCoroutine(LetterByLetter(sentence));
 
     }
 
     public void EndDialogue()
     {
+        animator.SetBool("IsOpen", false);
         Debug.Log("End of discussion");
         scriptController.dialogueHasStarted = false;
     }
+
+    IEnumerator LetterByLetter (string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            audioKey.Play();
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
 
 }
