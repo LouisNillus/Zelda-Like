@@ -47,13 +47,13 @@ public class CharacterController : MonoBehaviour
         nightmare = Input.GetAxis("GoToNightmare");
         dream = Input.GetAxis("GoToDream");
 
-        if(Input.GetKeyDown(KeyCode.JoystickButton2) && dialogueHasStarted == false)
+        if(Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == false)
         {
             dialogueTrigger = dialogueTriggerObject.GetComponent<DialogueTrigger>();
             dialogueTrigger.TriggerDialogue();
             dialogueHasStarted = true;
         }
-        else if (Input.GetKeyDown(KeyCode.JoystickButton2) && dialogueHasStarted == true)
+        else if (Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == true)
         {
             dialogueManager.DisplayNextSentence();
         }
