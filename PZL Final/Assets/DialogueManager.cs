@@ -9,7 +9,8 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
-    public AudioSource audioKey;
+    public AudioSource audio;
+    public AudioClip keySound;
     public Animator animator;
     public GameObject monJoueur;
     CharacterController scriptController;
@@ -62,6 +63,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         Debug.Log("End of discussion");
         scriptController.dialogueHasStarted = false;
+        StopAllCoroutines();
     }
 
     IEnumerator LetterByLetter (string sentence)
@@ -70,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            audioKey.Play();
+            audio.PlayOneShot(keySound);
             yield return new WaitForSeconds(0.05f);
         }
     }

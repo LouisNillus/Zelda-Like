@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class DisplayMenuBar : MonoBehaviour {
+public class DisplayMenuBar : MonoBehaviour
+{
 
     public GameObject options;
     public bool canHide = false;
