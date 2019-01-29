@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468d546fc0c4579409d3116c5db45655, type: 3}
+  m_Name: PNJ-Orange
+  m_EditorClassIdentifier: 
+  id: 
+  name: PNJ ORANGE
+  speechFR:
+  - Salut Manu !
+  - "Bienvenue dans ma sc\xE8ne d'UI"
+  - "Ne fais pas attention aux particules qui tra\xEEne"
+  - "Elles sont innofensives, pas d'inqui\xE9tudes !"
+  - Ah, aussi, tu devrais baisser le son ou supprimer le fichier qui fait les bruits
+    de touches
+  - CAAAAAAAAAAAAAAAAAAA FAAAAAAAAAIIITT MAAAAAL AUUXX OREEEEEIIILLLES
+  speechGB:
+  - Hey Manu !
+  - Welcome in my UI scene
+  - Don't pay attention to the particcles
+  - They are harmless, no worries !
+  - Oh, you should also set your volume down or delete the file that makes the key
+    noises
+  - IIIIIIIITTTTTT HHUUUUUURRTTTSSSS TTHHEEEEEE EEEEAAAARRRRRRSSS
