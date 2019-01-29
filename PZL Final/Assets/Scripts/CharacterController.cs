@@ -4,6 +4,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CharacterController : MonoBehaviour
     private float nightmare = 0f;
     private float dream = 0f;
 
+    public float hp = 1;
     public bool dialogueHasStarted = false;
     public bool reve = true;
 
@@ -22,21 +24,19 @@ public class CharacterController : MonoBehaviour
     Animator animator;
     DialogueManager dialogueManager;
     DialogueTrigger dialogueTrigger;
+    Slider sliderHP;
 
     public GameObject tilemap;
     public GameObject dialogueManagerObject;
     public GameObject dialogueTriggerObject;
-
-    /*private void Awake()
-    {
-        DontDestroyOnLoad(transform.root.gameObject);
-    }*/
+    public GameObject mySliderHP;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
-        GameObject tilemap = GameObject.FindGameObjectWithTag("Reve");
+        sliderHP = mySliderHP.GetComponent<Slider>();
+        tilemap = GameObject.FindGameObjectWithTag("Reve");
         dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
     }
 
@@ -46,6 +46,8 @@ public class CharacterController : MonoBehaviour
         moveY = Input.GetAxis("Vertical");
         nightmare = Input.GetAxis("GoToNightmare");
         dream = Input.GetAxis("GoToDream");
+
+        sliderHP.value = hp;
 
         if(Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == false)
         {

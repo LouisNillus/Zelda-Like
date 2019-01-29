@@ -61,7 +61,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        Debug.Log("End of discussion");
         scriptController.dialogueHasStarted = false;
         StopAllCoroutines();
     }
