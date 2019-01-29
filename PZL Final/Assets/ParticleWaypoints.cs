@@ -53,13 +53,10 @@ public class ParticleWaypoints : MonoBehaviour
 
     private void MyRaycast()
     {
-
         RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, 1f, LayerMask.GetMask("Walls"));
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.left, 1f, LayerMask.GetMask("Walls"));
         RaycastHit2D hitUp = Physics2D.Raycast(transform.position, Vector2.left, 1f, LayerMask.GetMask("Walls"));
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.left, 1f, LayerMask.GetMask("Walls"));
-
-
     }
 
 
