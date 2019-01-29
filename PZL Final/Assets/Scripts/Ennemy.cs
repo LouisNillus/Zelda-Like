@@ -42,6 +42,7 @@ public class Ennemy : MonoBehaviour
         {
             Cauchemar();
         }
+        //TEST
     }
 
     void Reve()
