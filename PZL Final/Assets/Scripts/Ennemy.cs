@@ -6,7 +6,7 @@ public class Ennemy : MonoBehaviour
     public  Rigidbody2D _rb       ;
     public  GameObject  projectile;
     private Transform   target    ;
-
+    //Test
     public  float speed = 4f           ;
     private float backwardDistance = 8f; //A partir de cette distance, l'ennemi recule
     private float timeForShoot = 2f    ;
