@@ -66,6 +66,7 @@ public class CharacterController : MonoBehaviour
         rigidBody.velocity = new Vector2(maxSpeed * moveX, maxSpeed * moveY);
 
         IsMoving();
+        IsAttacking();
         
         if(nightmare != 0)
         {
@@ -92,6 +93,14 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    void IsAttacking()
+    {
+        if (Input.GetKeyDown("joystick 1 button 0") || Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("isAttacking");
+        }
+    }
+
     void GoToNightmare()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
@@ -99,7 +108,6 @@ public class CharacterController : MonoBehaviour
         //SceneManager.LoadScene("Cauchemar");
     }
     
-
     void GoToDream()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
