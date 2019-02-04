@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 124fca89b833eb44b87c1680e7a2757b
+guid: 05d5eb75fbcfc9c4b9d1c6040ad25b44
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sprites_Walk_dos_Dream_0
-    21300002: Sprites_Walk_dos_Dream_1
-    21300004: Sprites_Walk_dos_Dream_2
-    21300006: Sprites_Walk_dos_Dream_3
+    21300000: Sprites_Walk_profil_gauche_Dream_0
+    21300002: Sprites_Walk_profil_gauche_Dream_1
+    21300004: Sprites_Walk_profil_gauche_Dream_2
+    21300006: Sprites_Walk_profil_gauche_Dream_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -143,12 +143,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprites_Walk_dos_Dream_0
+      name: Sprites_Walk_profil_gauche_Dream_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 23
+        width: 19
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,18 +157,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cb3e2f3393b6f543847c229b49f13f8
+      spriteID: 12228a4ceb4ce1e4982959bfe9d0d434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites_Walk_dos_Dream_1
+      name: Sprites_Walk_profil_gauche_Dream_1
       rect:
         serializedVersion: 2
-        x: 23
+        x: 25
         y: 0
-        width: 23
+        width: 19
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -177,18 +177,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a810076b7b77c47b89d21e0cb70e11
+      spriteID: ccfcaca164fa8784dbd04bcfe6862acc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites_Walk_dos_Dream_2
+      name: Sprites_Walk_profil_gauche_Dream_2
       rect:
         serializedVersion: 2
-        x: 46
+        x: 47
         y: 0
-        width: 23
+        width: 19
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,18 +197,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dbc67407761e6a4e9f5d4d432452e67
+      spriteID: 8a0eb075cc59a4044972c730d0888298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites_Walk_dos_Dream_3
+      name: Sprites_Walk_profil_gauche_Dream_3
       rect:
         serializedVersion: 2
-        x: 69
+        x: 71
         y: 0
-        width: 23
+        width: 19
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -217,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50217cea099fd544594b19fd253e82d6
+      spriteID: 2f318ede89ad7b142b02452d4d8fe56e
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 74b0454098495384cbc9ec5078517f27
+    spriteID: 6acf0dd749bf2914a8a5038e31e92c1c
     vertices: []
     indices: 
     edges: []
