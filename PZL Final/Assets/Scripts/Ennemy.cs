@@ -6,11 +6,10 @@ public class Ennemy : MonoBehaviour
     public  Rigidbody2D _rb       ;
     public  GameObject  projectile;
     private Transform   target    ;
-    //Test
+
     public  float speed = 4f           ;
     private float backwardDistance = 8f; //A partir de cette distance, l'ennemi recule
-    private float timeForShoot = 2f    ;
-    private float startTimeForShoot    ;
+    private float timeForShoot = 2f  ;
 
     public  int   playerDamage; //Dégâts qu'il inflige au joueur
 
@@ -20,14 +19,12 @@ public class Ennemy : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        timeForShoot = startTimeForShoot;
+        
     }
 
     private void Update()
     {
         isReve = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().reve;
-
-        Debug.Log(isReve);
 
         //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
@@ -61,11 +58,13 @@ public class Ennemy : MonoBehaviour
 
         if (timeForShoot <= 0)
         {
+            Debug.Log("tfs " + timeForShoot);
             Instantiate(projectile, transform.position, Quaternion.identity);
-            timeForShoot = startTimeForShoot;
+            timeForShoot = 2f;
         }
         else
         {
+            Debug.Log("tfs " + timeForShoot);
             timeForShoot -= Time.deltaTime;
         }
     }
