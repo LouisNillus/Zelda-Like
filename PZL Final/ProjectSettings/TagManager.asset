@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Reve
   - TalkingPNJ
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Reve
   - Cauchemar
   - Walls
-  - 
+  - Enemy
   - 
   - 
   - 
