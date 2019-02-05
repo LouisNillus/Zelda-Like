@@ -32,11 +32,9 @@ public class Damages : MonoBehaviour
         }
     }
 
-
     public void SetLifeLower()
     {
         myControllerScript.hp = myControllerScript.hp - inflictedDamages;
     }
-
 
 }

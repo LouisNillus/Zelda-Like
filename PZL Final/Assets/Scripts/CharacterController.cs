@@ -16,6 +16,7 @@ public class CharacterController : MonoBehaviour
     private float dream = 0f;
 
     public float hp = 1;
+    public int damage = 1;
     public bool dialogueHasStarted = false;
     public bool reve = true;
 
@@ -30,6 +31,8 @@ public class CharacterController : MonoBehaviour
     public GameObject dialogueManagerObject;
     public GameObject dialogueTriggerObject;
     public GameObject mySliderHP;
+
+    private Collider2D[] hitResult = new Collider2D[10]; 
 
     void Start()
     {
@@ -66,6 +69,7 @@ public class CharacterController : MonoBehaviour
         rigidBody.velocity = new Vector2(maxSpeed * moveX, maxSpeed * moveY);
 
         IsMoving();
+        IsAttacking();
         
         if(nightmare != 0)
         {
@@ -92,6 +96,25 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    void IsAttacking()
+    {
+        if (Input.GetKeyDown("joystick 1 button 0") || Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("isAttacking");
+            int nbHitObjects = Physics2D.OverlapCircleNonAlloc(transform.position , 1.0f, hitResult);
+
+            foreach (Collider2D hitObject in hitResult)
+            {
+                Debug.Log(hitObject);
+                if (hitObject.gameObject.tag == "Enemy")
+                {
+                    Debug.Log(hitObject + " > Life : " + hitObject.gameObject.GetComponent<Ennemy>().hpEnemy);
+                    hitObject.gameObject.GetComponent<Ennemy>().hpEnemy = hitObject.gameObject.GetComponent<Ennemy>().hpEnemy - damage;
+                }
+            }
+        }
+    }
+
     void GoToNightmare()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
@@ -99,7 +122,6 @@ public class CharacterController : MonoBehaviour
         //SceneManager.LoadScene("Cauchemar");
     }
     
-
     void GoToDream()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
