@@ -7,6 +7,7 @@ TagManager:
   - Reve
   - TalkingPNJ
   - Enemy
+  - PlayerCible
   layers:
   - Default
   - TransparentFX

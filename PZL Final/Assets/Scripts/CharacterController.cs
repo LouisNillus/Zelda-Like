@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour
     private float nightmare = 0f;
     private float dream = 0f;
 
-    public float hp = 1;
+    public int hp = 3;
     public int damage = 1;
     public bool dialogueHasStarted = false;
     public bool reve = true;
@@ -50,7 +50,7 @@ public class CharacterController : MonoBehaviour
         nightmare = Input.GetAxis("GoToNightmare");
         dream = Input.GetAxis("GoToDream");
 
-        sliderHP.value = hp;
+        //sliderHP.value = hp;
 
         if(Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == false)
         {
@@ -70,6 +70,7 @@ public class CharacterController : MonoBehaviour
 
         IsMoving();
         IsAttacking();
+        isDead(hp);
         
         if(nightmare != 0)
         {
@@ -127,5 +128,13 @@ public class CharacterController : MonoBehaviour
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
         reve = true;
         //SceneManager.LoadScene("Reve");
+    }
+
+    void isDead(int hp)
+    {
+        if(hp == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
