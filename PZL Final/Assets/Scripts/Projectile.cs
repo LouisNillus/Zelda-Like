@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed;
+    private int damage = 1;
 
     private Transform target;
 
@@ -17,10 +18,10 @@ public class Projectile : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-        if(transform.position.x == target.position.x && transform.position.y == target.position.y)
+        /*if(transform.position.x == target.position.x && transform.position.y == target.position.y)
         {
             DestroyProjectile();
-        }
+        }*/
 	}
 
     void DestroyProjectile()
@@ -30,8 +31,11 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        Debug.Log("Je fonctionne, collision : " + collision);
+        if(collision.tag == "Player")
         {
+            collision.GetComponent<CharacterController>().hp = collision.GetComponent<CharacterController>().hp - damage;
+            Debug.Log(collision.GetComponent<CharacterController>().hp);
             DestroyProjectile();
         }
     }
