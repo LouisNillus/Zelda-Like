@@ -74,7 +74,7 @@ public class Ennemy : MonoBehaviour
     //A déplacer plus tard dans un Script commun aux ennemis (Pour éviter d'avoir 300 isDead poru chaque monstre)
     void isDead(int hp)
     {
-        if(hp == 0)
+        if(hp <= 0)
         {   //Parametre de l'animation de mort lorsqu'il y'en aura une
             //animator.setBool("isDead", true);
 
