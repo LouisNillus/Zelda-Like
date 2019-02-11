@@ -8,6 +8,8 @@ TagManager:
   - TalkingPNJ
   - Enemy
   - PlayerCible
+  - Particle
+  - ParticleWall
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Cauchemar
   - Walls
   - Enemy
-  - 
+  - ParticleWall
   - 
   - 
   - 

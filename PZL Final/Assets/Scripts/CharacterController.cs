@@ -32,7 +32,9 @@ public class CharacterController : MonoBehaviour
     public GameObject dialogueTriggerObject;
     public GameObject mySliderHP;
 
-    private Collider2D[] hitResult = new Collider2D[10]; 
+    private Collider2D[] hitResult = new Collider2D[10];
+
+    public GameObject seeAbility;
 
     void Start()
     {
@@ -70,6 +72,7 @@ public class CharacterController : MonoBehaviour
 
         IsMoving();
         IsAttacking();
+        Ability1();
         isDead(hp);
         
         if(nightmare != 0)
@@ -132,9 +135,17 @@ public class CharacterController : MonoBehaviour
 
     void isDead(int hp)
     {
-        if(hp == 0)
+        if(hp <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void Ability1()
+    {
+        if(Input.GetKeyDown("joystick 1 button 1") && !reve)
+        {
+            Instantiate(seeAbility, transform.position, Quaternion.identity);
         }
     }
 }
