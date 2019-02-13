@@ -36,13 +36,15 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
 
     }
 
     public void DisplayNextSentence ()
     {
+        int i = 0;
+        i++;
+        Debug.Log(i);
 
         if(sentences.Count == 0)
         {
@@ -52,10 +54,14 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
-
         StopAllCoroutines();
         StartCoroutine(LetterByLetter(sentence));
 
+    }
+
+    public void Update()
+    {
+        Debug.Log(sentences.Count);
     }
 
     public void EndDialogue()

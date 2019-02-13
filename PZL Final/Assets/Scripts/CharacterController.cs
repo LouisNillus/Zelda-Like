@@ -45,7 +45,6 @@ public class CharacterController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         sliderHP = mySliderHP.GetComponent<Slider>();
         tilemap = GameObject.FindGameObjectWithTag("Reve");
-        dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
     }
 
     private void Update()
@@ -57,14 +56,15 @@ public class CharacterController : MonoBehaviour
 
         //sliderHP.value = hp;
 
-        if(Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == false)
+        if(Input.GetKeyDown(KeyCode.Joystick1Button0) && dialogueHasStarted == false)
         {
             dialogueTrigger = dialogueTriggerObject.GetComponent<DialogueTrigger>();
             dialogueTrigger.TriggerDialogue();
             dialogueHasStarted = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == true)
+        else if (Input.GetKeyDown(KeyCode.Joystick1Button0) && dialogueHasStarted == true)
         {
+            dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
             dialogueManager.DisplayNextSentence();
         }
     }

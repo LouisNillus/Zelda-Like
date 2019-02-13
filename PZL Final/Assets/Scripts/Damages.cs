@@ -8,7 +8,8 @@ public class Damages : MonoBehaviour
     public GameObject myPlayer;
     CharacterController myControllerScript;
 
-    private int inflictedDamages = 1;
+    [Range(0.01f,1), SerializeField]
+    private float inflictedDamages;
 
     void Start()
     {
@@ -19,7 +20,8 @@ public class Damages : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            InvokeRepeating("SetLifeLower", 0.5f, 0.5f);
+            //InvokeRepeating("SetLifeLower", 0.5f, 0.5f);
+            SetKO();
         }
     }
 
@@ -33,7 +35,12 @@ public class Damages : MonoBehaviour
 
     public void SetLifeLower()
     {
-        myControllerScript.hp = myControllerScript.hp - inflictedDamages;
+        //myControllerScript.hp = myControllerScript.hp - inflictedDamages;
+    }
+
+    public void SetKO()
+    {
+        myControllerScript.hp = 0;
     }
 
 }
