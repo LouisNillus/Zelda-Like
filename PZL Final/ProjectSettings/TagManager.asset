@@ -10,6 +10,7 @@ TagManager:
   - PlayerCible
   - Particle
   - ParticleWall
+  - key
   layers:
   - Default
   - TransparentFX

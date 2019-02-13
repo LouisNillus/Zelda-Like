@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 320756862}
   - component: {fileID: 320756861}
   - component: {fileID: 320756860}
+  - component: {fileID: 320756863}
   m_Layer: 0
   m_Name: dalledeplacement
   m_TagString: Untagged
@@ -946,6 +947,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &320756863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 320756859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7b6d127552336429e546ea63b68c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escalier: {fileID: 1376905558}
+  wallDisapear: {fileID: 1109967498}
 --- !u!1 &407967673
 GameObject:
   m_ObjectHideFlags: 0
@@ -22512,7 +22526,7 @@ GameObject:
   - component: {fileID: 988167125}
   m_Layer: 0
   m_Name: cube
-  m_TagString: Untagged
+  m_TagString: key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22536,7 +22550,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &988167125
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23588,6 +23602,16 @@ Prefab:
         type: 2}
       propertyPath: maxSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50431742946495182, guid: d28f333ce353dc34eaf9b2732f7630e5,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50431742946495182, guid: d28f333ce353dc34eaf9b2732f7630e5,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d28f333ce353dc34eaf9b2732f7630e5, type: 2}
