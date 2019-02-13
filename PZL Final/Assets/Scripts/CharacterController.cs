@@ -15,10 +15,13 @@ public class CharacterController : MonoBehaviour
     private float nightmare = 0f;
     private float dream = 0f;
 
-    public float hp = 1;
+    public int hp = 3;
     public int damage = 1;
     public bool dialogueHasStarted = false;
     public bool reve = true;
+
+    public int pushPower = 2;
+    public int weight = 6;
 
     private Rigidbody2D rigidBody;
 
@@ -32,7 +35,9 @@ public class CharacterController : MonoBehaviour
     public GameObject dialogueTriggerObject;
     public GameObject mySliderHP;
 
-    private Collider2D[] hitResult = new Collider2D[10]; 
+    private Collider2D[] hitResult = new Collider2D[10];
+
+    public GameObject seeAbility;
 
     void Start()
     {
@@ -50,7 +55,7 @@ public class CharacterController : MonoBehaviour
         nightmare = Input.GetAxis("GoToNightmare");
         dream = Input.GetAxis("GoToDream");
 
-        sliderHP.value = hp;
+        //sliderHP.value = hp;
 
         if(Input.GetKeyDown(KeyCode.Space) && dialogueHasStarted == false)
         {
@@ -70,6 +75,8 @@ public class CharacterController : MonoBehaviour
 
         IsMoving();
         IsAttacking();
+        Ability1();
+        isDead(hp);
         
         if(nightmare != 0)
         {
@@ -115,6 +122,7 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+
     void GoToNightmare()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
@@ -127,5 +135,21 @@ public class CharacterController : MonoBehaviour
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
         reve = true;
         //SceneManager.LoadScene("Reve");
+    }
+
+    void isDead(int hp)
+    {
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Ability1()
+    {
+        if(Input.GetKeyDown("joystick 1 button 1") && !reve)
+        {
+            Instantiate(seeAbility, transform.position, Quaternion.identity);
+        }
     }
 }

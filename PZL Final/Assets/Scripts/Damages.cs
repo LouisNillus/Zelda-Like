@@ -8,8 +8,7 @@ public class Damages : MonoBehaviour
     public GameObject myPlayer;
     CharacterController myControllerScript;
 
-    [Range(0.01f,1), SerializeField]
-    private float inflictedDamages;
+    private int inflictedDamages = 1;
 
     void Start()
     {

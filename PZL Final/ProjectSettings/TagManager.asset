@@ -7,6 +7,10 @@ TagManager:
   - Reve
   - TalkingPNJ
   - Enemy
+  - PlayerCible
+  - Particle
+  - ParticleWall
+  - key
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,7 @@ TagManager:
   - Cauchemar
   - Walls
   - Enemy
-  - 
+  - ParticleWall
   - 
   - 
   - 
