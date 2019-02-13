@@ -5,13 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_Scenes/ALC_Proto.unity
+    guid: eaaa59e184b495f448e53801c3ce5f90
   - enabled: 1
-    path: Assets/Scenes/Reve.unity
-    guid: c0fcf95e912cd9d499a3e07ae6165bcf
+    path: Assets/_Scenes/LON_MENU.unity
+    guid: 15067c9a487c0a745a33415cd69d1256
   - enabled: 1
-    path: Assets/Scenes/Cauchemar.unity
-    guid: d707a679a6b8e974cbe21a9f79fd6f7a
+    path: Assets/_Scenes/LON_MENU_OPTIONS.unity
+    guid: f2304343d8e893441a85115865e23a2a
+  - enabled: 1
+    path: Assets/_Scenes/LON_Scene1.unity
+    guid: 84bfcb74d2c5e9f44a0d018a03469661
+  - enabled: 1
+    path: Assets/_Scenes/MAL_Proto.unity
+    guid: d8dd6fb97c5b97c4582580860ab502fc
   m_configObjects: {}

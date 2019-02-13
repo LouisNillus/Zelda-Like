@@ -62,7 +62,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadFirstScene()
     {
-        SceneManager.LoadScene("LON_Scene1", LoadSceneMode.Single);
+        SceneManager.LoadScene("MAL_Proto", LoadSceneMode.Single);
     }
 
     public void QuitGame()
