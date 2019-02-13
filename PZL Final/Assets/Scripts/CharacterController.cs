@@ -20,6 +20,9 @@ public class CharacterController : MonoBehaviour
     public bool dialogueHasStarted = false;
     public bool reve = true;
 
+    public int pushPower = 2;
+    public int weight = 6;
+
     private Rigidbody2D rigidBody;
 
     Animator animator;
@@ -118,6 +121,7 @@ public class CharacterController : MonoBehaviour
             }
         }
     }
+
 
     void GoToNightmare()
     {
