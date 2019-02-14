@@ -17,6 +17,7 @@ public class Ennemy : MonoBehaviour
     public int hpEnemy = 3;
 
     public  bool  isReve; //Bool pour savoir si c'est le rêve ou le cauchemar.
+    public bool isDetected;
 
     void Start()
     {
@@ -50,7 +51,10 @@ public class Ennemy : MonoBehaviour
     void Reve()
     {
         //Enemy follow you
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if (isDetected)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
     
     void Cauchemar()
@@ -78,6 +82,22 @@ public class Ennemy : MonoBehaviour
         if (hp <= 0)
         {   //Parametre de l'animation de mort lorsqu'il y'en aura une
             animator.SetBool("isDead", true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            isDetected = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            isDetected = false;
         }
     }
 }

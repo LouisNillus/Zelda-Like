@@ -143,12 +143,26 @@ public class CharacterController : MonoBehaviour
 
         foreach (GameObject reveObject in reveObjects)
         {
-            reveObject.GetComponent<SpriteRenderer>().enabled = false;
+            if (reveObject.GetComponent<SpriteRenderer>() != null)
+            {
+                reveObject.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            else
+            {
+                reveObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            }
         }
 
         foreach (GameObject cauchemarObject in cauchemarObjects)
         {
-            cauchemarObject.GetComponent<SpriteRenderer>().enabled = true;
+            if (cauchemarObject.GetComponent<SpriteRenderer>() != null)
+            {
+                cauchemarObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            }
         }
     }
     
@@ -162,12 +176,26 @@ public class CharacterController : MonoBehaviour
 
         foreach (GameObject cauchemarObject in cauchemarObjects)
         {
-            cauchemarObject.GetComponent<SpriteRenderer>().enabled = false;
+            if (cauchemarObject.GetComponent<SpriteRenderer>() != null)
+            {
+                cauchemarObject.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            else
+            {
+                cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            }
         }
 
         foreach (GameObject reveObject in reveObjects)
         {
-            reveObject.GetComponent<SpriteRenderer>().enabled = true;
+            if (reveObject.GetComponent<SpriteRenderer>() != null)
+            {
+                reveObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                reveObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            }
         }
     }
 
