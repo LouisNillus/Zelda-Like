@@ -7,7 +7,6 @@ public class ParticleScript : MonoBehaviour
     public bool isReve;
     private ParticleSystem cauchemarParticle;
 
-	// Use this for initialization
 	void Start ()
     {
         cauchemarParticle = GetComponent<ParticleSystem>();

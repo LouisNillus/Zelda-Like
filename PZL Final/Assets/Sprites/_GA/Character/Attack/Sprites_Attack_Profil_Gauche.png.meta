@@ -1,23 +1,15 @@
 fileFormatVersion: 2
-guid: 443ed4124efe8c64c81dad82261302e9
+guid: a6ffa4934925c4747ab8d71970c2c5c6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: epaisseur N_0
-    21300002: epaisseur N_1
-    21300004: epaisseur N_2
-    21300006: epaisseur N_3
-    21300008: epaisseur N_4
-    21300010: epaisseur N_5
-    21300012: epaisseur N_6
-    21300014: epaisseur N_7
-    21300016: epaisseur N_8
-    21300018: epaisseur N_9
-    21300020: epaisseur N_10
-    21300022: epaisseur N_11
-    21300024: epaisseur N_12
-    21300026: epaisseur N_13
-    21300028: epaisseur N_14
-    21300030: epaisseur N_15
+    21300000: Sprites_Attack_Profil_Gauche_1
+    21300002: Sprites_Attack_Profil_Gauche_3
+    21300004: Sprites_Attack_Profil_Gauche_5
+    21300006: Sprites_Attack_Profil_Gauche_6
+    21300008: Sprites_Attack_Profil_Gauche_8
+    21300010: Sprites_Attack_Profil_Gauche_9
+    21300012: Sprites_Attack_Profil_Gauche_10
+    21300014: Sprites_Attack_Profil_Gauche_11
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -155,12 +147,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: epaisseur N_0
+      name: Sprites_Attack_Profil_Gauche_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
+        y: 3
+        width: 36
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -169,159 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed652fdf8a273e54eabf123932f2a24f
+      spriteID: d5b5eedd5e0af92459640405591eb37d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_1
+      name: Sprites_Attack_Profil_Gauche_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4047c1c2864ec04f94ea1eba1787657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 094ce623c5db1ef42a710bc660cab676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a81d7b56b11181a4a933c150e7028787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0ebef834e71f6b4dbc422cede3b6982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56cbc0cd00904c74294d24a503ab8962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 111a846d7ad44e246a96498763410d4f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a500bcde5f08c8542a759871949d1ca5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_8
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 37
         y: 0
-        width: 32
-        height: 32
+        width: 33
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,19 +181,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f012790d7bb3ca41bc6eeac4d9bba54
+      spriteID: 5a0845ea31143684e83147c8b0136393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_9
+      name: Sprites_Attack_Profil_Gauche_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 71
+        y: 4
+        width: 35
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,18 +201,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85fdf7d4dcfb8214ca1c28067713704c
+      spriteID: a74724be3f49e734ea9758e372dc45f1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_10
+      name: Sprites_Attack_Profil_Gauche_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
+        x: 107
+        y: 2
+        width: 36
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -369,19 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b251f50bc661d7a4ab097c4eae245409
+      spriteID: ab64cacacedd5b14289f344104beb75b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_11
+      name: Sprites_Attack_Profil_Gauche_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 144
+        y: 1
+        width: 36
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,19 +241,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1ebaacdc0fefc4d9327c53bab30fd0
+      spriteID: a3a1d6739e00bbb409f1357ef04ad41c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_12
+      name: Sprites_Attack_Profil_Gauche_9
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 181
+        y: 1
+        width: 33
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,19 +261,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3646196f67685f4689d26bbaba6503d
+      spriteID: 018d6429398ba004195df8103886b1a8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_13
+      name: Sprites_Attack_Profil_Gauche_10
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
+        x: 215
+        y: 2
+        width: 35
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,19 +281,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81d6fbd70827ea8499d390a2b5b53f3d
+      spriteID: efe428006d4b5e64d9ee3ad82b6b67b4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_14
+      name: Sprites_Attack_Profil_Gauche_11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
+        x: 251
+        y: 4
+        width: 37
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,27 +301,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b1b0d291bab2504ea07d8c8605b9236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_15
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 096e7816d98b25a4b927ff8855d6785b
+      spriteID: de594b0a15dc9e9408a0f9f6840e7a0f
       vertices: []
       indices: 
       edges: []
@@ -477,7 +309,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5ef2f5d7137e6044eae0d552a7c9071c
+    spriteID: 121376ec9b9f8054ba617164e620f9cd
     vertices: []
     indices: 
     edges: []

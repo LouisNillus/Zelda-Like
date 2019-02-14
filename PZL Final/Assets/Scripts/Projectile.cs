@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed;
-    private int damage = 1;
+    private int damage = 0;
 
     private Transform target;
 
@@ -31,7 +31,6 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Je fonctionne, collision : " + collision);
         if(collision.tag == "Player")
         {
             collision.GetComponent<CharacterController>().hp = collision.GetComponent<CharacterController>().hp - damage;
