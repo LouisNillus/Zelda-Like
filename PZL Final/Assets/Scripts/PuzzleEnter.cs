@@ -15,7 +15,7 @@ public class PuzzleEnter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "key")
+        if (collision.name == "key")
         {
             wallDisapear.isTrigger = true;
             escalier.enabled = true;

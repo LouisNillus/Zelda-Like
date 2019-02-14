@@ -38,6 +38,10 @@ public class CharacterController : MonoBehaviour
     private Collider2D[] hitResult = new Collider2D[10];
 
     public GameObject seeAbility;
+    public ParticleSystem notSeeAbility;
+
+    public GameObject[] cauchemarObjects;
+    public GameObject[] reveObjects;
 
     void Start()
     {
@@ -127,14 +131,38 @@ public class CharacterController : MonoBehaviour
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
         reve = false;
-        //SceneManager.LoadScene("Cauchemar");
+
+        reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
+        cauchemarObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnCauchemar");
+
+        foreach (GameObject reveObject in reveObjects)
+        {
+            reveObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        foreach (GameObject cauchemarObject in cauchemarObjects)
+        {
+            cauchemarObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
     
     void GoToDream()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
         reve = true;
-        //SceneManager.LoadScene("Reve");
+
+        reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
+        cauchemarObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnCauchemar");
+
+        foreach (GameObject cauchemarObject in cauchemarObjects)
+        {
+            cauchemarObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        foreach (GameObject reveObject in reveObjects)
+        {
+            reveObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     void isDead(int hp)
@@ -150,6 +178,10 @@ public class CharacterController : MonoBehaviour
         if(Input.GetKeyDown("joystick 1 button 1") && !reve)
         {
             Instantiate(seeAbility, transform.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown("joystick 1 button 1") && reve)
+        {
+           Instantiate(notSeeAbility, transform.position, Quaternion.identity);  
         }
     }
 }

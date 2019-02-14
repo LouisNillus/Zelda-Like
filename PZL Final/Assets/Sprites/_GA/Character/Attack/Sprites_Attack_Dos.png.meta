@@ -1,23 +1,21 @@
 fileFormatVersion: 2
-guid: 443ed4124efe8c64c81dad82261302e9
+guid: 42a2a47f58a0fd646a808eb6747f715e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: epaisseur N_0
-    21300002: epaisseur N_1
-    21300004: epaisseur N_2
-    21300006: epaisseur N_3
-    21300008: epaisseur N_4
-    21300010: epaisseur N_5
-    21300012: epaisseur N_6
-    21300014: epaisseur N_7
-    21300016: epaisseur N_8
-    21300018: epaisseur N_9
-    21300020: epaisseur N_10
-    21300022: epaisseur N_11
-    21300024: epaisseur N_12
-    21300026: epaisseur N_13
-    21300028: epaisseur N_14
-    21300030: epaisseur N_15
+    21300000: Sprites_Attack_Dos_0
+    21300002: Sprites_Attack_Dos_1
+    21300004: Sprites_Attack_Dos_2
+    21300006: Sprites_Attack_Dos_3
+    21300008: Sprites_Attack_Dos_4
+    21300010: Sprites_Attack_Dos_5
+    21300012: Sprites_Attack_Dos_7
+    21300014: Sprites_Attack_Dos_8
+    21300016: Sprites_Attack_Dos_9
+    21300018: Sprites_Attack_Dos_10
+    21300020: Sprites_Attack_Dos_11
+    21300022: Sprites_Attack_Dos_12
+    21300024: Sprites_Attack_Dos_14
+    21300026: Sprites_Attack_Dos_15
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -155,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: epaisseur N_0
+      name: Sprites_Attack_Dos_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
+        x: 1
+        y: 8
+        width: 23
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed652fdf8a273e54eabf123932f2a24f
+      spriteID: 70a72279f01186c4d9be1a75e7f31e22
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_1
+      name: Sprites_Attack_Dos_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 25
+        y: 8
+        width: 23
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4047c1c2864ec04f94ea1eba1787657
+      spriteID: 27bded55ff44c974b9c8afe7f8266599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_2
+      name: Sprites_Attack_Dos_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
+        x: 49
+        y: 8
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,19 +207,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 094ce623c5db1ef42a710bc660cab676
+      spriteID: 99738d933e5fdbe448593a6d1282aa13
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_3
+      name: Sprites_Attack_Dos_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
+        x: 75
+        y: 8
+        width: 29
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,18 +227,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a81d7b56b11181a4a933c150e7028787
+      spriteID: f5a130d863e81b448beba2184aa8b94d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_4
+      name: Sprites_Attack_Dos_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
+        x: 105
+        y: 8
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -249,18 +247,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0ebef834e71f6b4dbc422cede3b6982
+      spriteID: 725c0fe2ad530974c9b9649d2fb9b34b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_5
+      name: Sprites_Attack_Dos_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
+        x: 137
+        y: 8
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -269,18 +267,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56cbc0cd00904c74294d24a503ab8962
+      spriteID: 59440469391cfb3449f8838856cda553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_6
+      name: Sprites_Attack_Dos_7
       rect:
         serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
+        x: 169
+        y: 8
+        width: 23
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,19 +287,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 111a846d7ad44e246a96498763410d4f
+      spriteID: 6ac215b1f9eb9f24ea9e94c43e57f488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_7
+      name: Sprites_Attack_Dos_8
       rect:
         serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
+        x: 199
+        y: 8
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,19 +307,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a500bcde5f08c8542a759871949d1ca5
+      spriteID: f141cece456e4644d8c06e7047f51437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_8
+      name: Sprites_Attack_Dos_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 226
+        y: 8
+        width: 24
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,19 +327,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f012790d7bb3ca41bc6eeac4d9bba54
+      spriteID: b2bbaf0d2c7c6de43bfc312c0ed9d3c8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_9
+      name: Sprites_Attack_Dos_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 251
+        y: 8
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,19 +347,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85fdf7d4dcfb8214ca1c28067713704c
+      spriteID: 93dc8c8c7a982cf48b867c07762755eb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_10
+      name: Sprites_Attack_Dos_11
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 277
+        y: 8
+        width: 29
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,18 +367,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b251f50bc661d7a4ab097c4eae245409
+      spriteID: fd53a387aa288e047a7f9b07c0ea3823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_11
+      name: Sprites_Attack_Dos_12
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
+        x: 307
+        y: 8
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -389,18 +387,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1ebaacdc0fefc4d9327c53bab30fd0
+      spriteID: 14ba74dcac642b14186f29d005d465d2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_12
+      name: Sprites_Attack_Dos_14
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
+        x: 339
+        y: 8
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -409,18 +407,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3646196f67685f4689d26bbaba6503d
+      spriteID: bcd65543583ac3746a516e68b150bde8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: epaisseur N_13
+      name: Sprites_Attack_Dos_15
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
+        x: 375
+        y: 8
+        width: 23
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -429,47 +427,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81d6fbd70827ea8499d390a2b5b53f3d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_14
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b1b0d291bab2504ea07d8c8605b9236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: epaisseur N_15
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 096e7816d98b25a4b927ff8855d6785b
+      spriteID: 4c96e872f7d9f9e4f921dd514241f36e
       vertices: []
       indices: 
       edges: []
@@ -477,7 +435,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5ef2f5d7137e6044eae0d552a7c9071c
+    spriteID: 1ea0c47cf09175a42af1a0cb77237121
     vertices: []
     indices: 
     edges: []

@@ -9,8 +9,8 @@ public class Ennemy : MonoBehaviour
     public  GameObject  projectile;
     private Transform   target    ;
 
-    public  float speed = 4f           ;
-    private float backwardDistance = 8f; //A partir de cette distance, l'ennemi recule
+    public  float speed = 1f           ;
+    private float backwardDistance = 3f; //A partir de cette distance, l'ennemi recule
     private float timeForShoot = 2f  ;
 
     public  int   playerDamage; //Dégâts qu'il inflige au joueur
@@ -20,6 +20,7 @@ public class Ennemy : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
         
@@ -55,7 +56,7 @@ public class Ennemy : MonoBehaviour
     void Cauchemar()
     {
        //Enemy move backward and throw projectile
-       if(Vector2.Distance(transform.position, target.position) < backwardDistance)
+        if(Vector2.Distance(transform.position, target.position) < backwardDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
         }
@@ -74,11 +75,9 @@ public class Ennemy : MonoBehaviour
     //A déplacer plus tard dans un Script commun aux ennemis (Pour éviter d'avoir 300 isDead poru chaque monstre)
     void isDead(int hp)
     {
-        if(hp <= 0)
+        if (hp <= 0)
         {   //Parametre de l'animation de mort lorsqu'il y'en aura une
-            //animator.setBool("isDead", true);
-
-            Destroy(this.gameObject);
+            animator.SetBool("isDead", true);
         }
     }
 }

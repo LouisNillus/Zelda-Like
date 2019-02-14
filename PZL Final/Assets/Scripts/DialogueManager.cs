@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(sentences.Count);
+
     }
 
     public void EndDialogue()

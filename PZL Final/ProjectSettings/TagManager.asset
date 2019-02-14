@@ -11,6 +11,8 @@ TagManager:
   - Particle
   - ParticleWall
   - key
+  - CeQuiApparaitEnCauchemar
+  - CeQuiApparaitEnReve
   layers:
   - Default
   - TransparentFX
