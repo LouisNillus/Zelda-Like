@@ -14,13 +14,13 @@ MonoBehaviour:
   id: 
   name: Isil
   speechFR:
-  - 'Hey, Live ! Tu me reconnais ? '
-  - "Je suis l\xE0, avec toi, pour t\u2019aider \xE0 t\u2019en sortir."
-  - "Tu es ici dans ton r\xEAve, comme toute les nuits. Mais aujourd\u2019hui, tout
-    est diff\xE9rent\u2026"
-  - "Car tu peux tout contr\xF4ler\u2026\r"
+  - Hey, Live ! C'est Isil
+  - "Tu es ici dans ton r\xEAve et je suis l\xE0 pour te guider"
+  - "En mode r\xEAve, si tu es perdu, appuies B et le chemin appara\xEEtra..."
+  - "En mode cauchemar, appuies sur B pour poser un leurre et d\xE9tourner l'attention
+    des ennemis."
   speechGB:
-  - Hahah
-  - 
-  - 
-  - 
+  - Hey, Live ! It's me Isil
+  - We're there in your dream and I'm here to guide you
+  - In Dream mode, if you're lost, press B et the way will appears...
+  - In Nightmare mode, press B to let a bait behind you and divert ennemies' attention.
