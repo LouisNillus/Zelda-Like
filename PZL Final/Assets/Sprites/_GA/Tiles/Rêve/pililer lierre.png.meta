@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: d3b77b864bd01904c97a24832e6a207d
+guid: dad6ba545924de3459eeab325b598744
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: pililer lierre_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -41,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -138,31 +137,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: pililer lierre_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 42
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8919e93378772f45ac2d3cfaf67e26b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 421c88e7d0253f944b534dfa6a4e017f
+    spriteID: e2b95a675530bb04f8ecfbbfd7b95c74
     vertices: []
     indices: 
     edges: []

@@ -12,9 +12,9 @@ public class CharacterController : MonoBehaviour
 
     private float moveX = 0f;
     private float moveY = 0f;
-    private float nightmare = 0f;
-    private float dream = 0f;
 
+    public float nightmare = 0f;
+    public float dream = 0f;
     public int hp = 3;
     public int damage = 1;
     public bool dialogueHasStarted = false;
@@ -42,6 +42,12 @@ public class CharacterController : MonoBehaviour
 
     public GameObject[] cauchemarObjects;
     public GameObject[] reveObjects;
+
+    private void Awake()
+    {
+        GoToDream();
+    }
+
 
     void Start()
     {
