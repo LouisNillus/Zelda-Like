@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Reve
   - TalkingPNJ
+<<<<<<< Updated upstream
   - Enemy
   - PlayerCible
   - Particle
@@ -13,6 +14,9 @@ TagManager:
   - key
   - CeQuiApparaitEnCauchemar
   - CeQuiApparaitEnReve
+=======
+  - Ennemy
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -26,8 +30,13 @@ TagManager:
   - Reve
   - Cauchemar
   - Walls
+<<<<<<< Updated upstream
   - Enemy
   - ParticleWall
+=======
+  - GeneralVolumebutton
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
