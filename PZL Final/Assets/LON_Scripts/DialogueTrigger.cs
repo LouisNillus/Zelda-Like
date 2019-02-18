@@ -45,9 +45,6 @@ public class DialogueTrigger : MonoBehaviour
             GameObject myPlayer = collision.gameObject;
             scriptController = myPlayer.GetComponent<CharacterController>();
             scriptController.dialogueTriggerObject = this.gameObject;
-
-            IndicatorScript indicatorRenderer = GetComponentInChildren<IndicatorScript>();
-            indicatorRenderer.DisplayIndicator();
         }
     }
 
@@ -58,9 +55,6 @@ public class DialogueTrigger : MonoBehaviour
             GameObject myPlayer = collision.gameObject;
             scriptController = myPlayer.GetComponent<CharacterController>();
             scriptController.dialogueTriggerObject = null;
-
-            IndicatorScript indicatorRenderer = GetComponentInChildren<IndicatorScript>();
-            indicatorRenderer.HideIndicator();
         }
     }
 

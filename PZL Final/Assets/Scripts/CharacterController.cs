@@ -209,11 +209,11 @@ public class CharacterController : MonoBehaviour
 
     void Ability1()
     {
-        if(Input.GetKeyDown("joystick 1 button 1") && !reve)
+        if(Input.GetKeyDown("joystick 1 button 3") && !reve)
         {
             Instantiate(seeAbility, transform.position, Quaternion.identity);
         }
-        if (Input.GetKeyDown("joystick 1 button 1") && reve)
+        if (Input.GetKeyDown("joystick 1 button 3") && reve)
         {
            Instantiate(notSeeAbility, transform.position, Quaternion.identity);  
         }

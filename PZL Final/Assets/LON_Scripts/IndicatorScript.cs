@@ -13,7 +13,24 @@ public class IndicatorScript : MonoBehaviour
         myRenderer = this.GetComponent<SpriteRenderer>();
 
 	}
-	
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            DisplayIndicator();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            HideIndicator();
+        }
+    }
+
+
     public void DisplayIndicator()
     {
         myRenderer.enabled = true;

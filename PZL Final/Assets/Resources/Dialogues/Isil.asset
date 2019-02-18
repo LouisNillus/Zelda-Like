@@ -14,13 +14,14 @@ MonoBehaviour:
   id: 
   name: Isil
   speechFR:
-  - Hey, Live ! C'est Isil
-  - "Tu es ici dans ton r\xEAve et je suis l\xE0 pour te guider"
-  - "En mode r\xEAve, si tu es perdu, appuies B et le chemin appara\xEEtra..."
-  - "En mode cauchemar, appuies sur B pour poser un leurre et d\xE9tourner l'attention
-    des ennemis."
+  - Bonjour Live, mon nom est Isil.
+  - "Je vais te guider dans tes r\xEAves."
+  - "Tu vas devoir te reconnecter \xE0 tes sens, ce qui n'est pas chose facile !"
+  - Tu es ici dans le monde de l'odorat.
+  - "Trouve le gardien de ce sens et d\xE9truit le pour t'y reconnecter."
   speechGB:
-  - Hey, Live ! It's me Isil
-  - We're there in your dream and I'm here to guide you
-  - In Dream mode, if you're lost, press B et the way will appears...
-  - In Nightmare mode, press B to let a bait behind you and divert ennemies' attention.
+  - Hello Live, my name is Isil.
+  - I'm your guide, here, in your dreams.
+  - Your mission is to link back your senses to your soul.
+  - You are here in the world of the sense of smell.
+  - Find the guardian of this sense and destroy it to link it to yourself.

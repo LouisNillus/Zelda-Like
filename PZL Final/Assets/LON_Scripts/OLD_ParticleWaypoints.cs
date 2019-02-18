@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleWaypoints : MonoBehaviour
+public class OLD_ParticleWaypoints : MonoBehaviour
 {
 
     [SerializeField]

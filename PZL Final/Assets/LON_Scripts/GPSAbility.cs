@@ -8,6 +8,7 @@ public class GPSAbility : MonoBehaviour
 
     public GameObject myParticles;
     public Transform myPlayer;
+    public CharacterController characterController;
 
     public int i = 0;
 
@@ -29,8 +30,17 @@ public class GPSAbility : MonoBehaviour
 	// Update
 	void Update ()
     {
-		
-        if(isLaunching == false)
+        if (characterController.reve == true)
+        {
+            canBeLaunched = true;
+        }
+        else
+        {
+            canBeLaunched = false;
+        }
+
+
+        if (isLaunching == false)
         {
             this.gameObject.transform.position = myPlayer.transform.position;
         }
@@ -40,7 +50,7 @@ public class GPSAbility : MonoBehaviour
         }
 
 
-        if(Input.GetKeyDown(KeyCode.D) && canBeLaunched == true)
+        if(Input.GetKeyDown("joystick 1 button 1") && canBeLaunched == true)
         {
             isLaunching = true;
             Debug.Log("Je lance mon GPS");
@@ -52,7 +62,6 @@ public class GPSAbility : MonoBehaviour
 
     public void LaunchGPS()
     {
-
         myParticles.SetActive(true);
         targetManager.target = waypoints[i];
         StartCoroutine(CoolDownGPS());
