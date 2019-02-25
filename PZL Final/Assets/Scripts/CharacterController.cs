@@ -12,9 +12,9 @@ public class CharacterController : MonoBehaviour
 
     private float moveX = 0f;
     private float moveY = 0f;
+    private float nightmare = 0f;
+    private float dream = 0f;
 
-    public float nightmare = 0f;
-    public float dream = 0f;
     public int hp = 3;
     public int damage = 1;
     public bool dialogueHasStarted = false;
@@ -43,12 +43,6 @@ public class CharacterController : MonoBehaviour
     public GameObject[] cauchemarObjects;
     public GameObject[] reveObjects;
 
-    private void Awake()
-    {
-        GoToDream();
-    }
-
-
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -66,13 +60,13 @@ public class CharacterController : MonoBehaviour
 
         //sliderHP.value = hp;
 
-        if(Input.GetKeyDown(KeyCode.Joystick1Button2) && dialogueHasStarted == false)
+        if(Input.GetKeyDown(KeyCode.Joystick1Button0) && dialogueHasStarted == false)
         {
             dialogueTrigger = dialogueTriggerObject.GetComponent<DialogueTrigger>();
             dialogueTrigger.TriggerDialogue();
             dialogueHasStarted = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Joystick1Button2) && dialogueHasStarted == true)
+        else if (Input.GetKeyDown(KeyCode.Joystick1Button0) && dialogueHasStarted == true)
         {
             dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
             dialogueManager.DisplayNextSentence();
@@ -149,7 +143,7 @@ public class CharacterController : MonoBehaviour
             }
             else
             {
-                reveObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                reveObject.GetComponent<BoxCollider2D>().isTrigger = false;
             }
         }
 

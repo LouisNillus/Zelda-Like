@@ -13,7 +13,7 @@ public class Ennemy : MonoBehaviour
     private float backwardDistance = 3f; //A partir de cette distance, l'ennemi recule
     private float timeForShoot = 2f  ;
 
-    public  int   playerDamage; //Dégâts qu'il inflige au joueur
+    public int playerDamage; //Dégâts qu'il inflige au joueur
     public int hpEnemy = 3;
 
     public  bool  isReve; //Bool pour savoir si c'est le rêve ou le cauchemar.
