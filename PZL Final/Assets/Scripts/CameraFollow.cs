@@ -6,33 +6,39 @@ public class CameraFollow : MonoBehaviour
     public GameObject player;
     public GameObject CubeD;
 
+    public Camera mainCamera;
+    public Camera cubeCamera;
+    public Camera playerCamera;
+
     private Vector3 offset;
     private Vector3 offsetCube;
 
     void Start()
     {
         offset = transform.position - player.transform.position;
-        offsetCube = transform.position - CubeD.transform.position;
-
-        Rigidbody2D rbCube = CubeD.GetComponent<Rigidbody2D>();
+        cubeCamera.enabled = false;
+        playerCamera.enabled = false;
+        mainCamera.enabled = true;
     }
-   
+
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
         Rigidbody2D rbCube = CubeD.GetComponent<Rigidbody2D>();
+
         transform.position = player.transform.position + offset;
 
         if (rbCube.velocity.x <= 0.4f)
         {
-            Debug.Log("Je bouge pas " + rbCube.velocity.x);
-            transform.position = player.transform.position + offset;
+            mainCamera.enabled = true;
+            cubeCamera.enabled = false;
+            playerCamera.enabled = false;
         }
         else
         {
-            Debug.Log("Je BOUGE " + rbCube.velocity.x);
-            transform.position = CubeD.transform.position + offsetCube;
+            mainCamera.enabled = false;
+            cubeCamera.enabled = true;
+            playerCamera.enabled = true;
         }
     }
-
 }
