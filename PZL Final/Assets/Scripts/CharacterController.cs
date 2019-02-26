@@ -42,8 +42,8 @@ public class CharacterController : MonoBehaviour
     public ParticleSystem notSeeAbility;
 
     //Liste des objets qu'il y'a en Cauchemar et Reve
-    public GameObject[] cauchemarObjects;
-    public GameObject[] reveObjects;
+    private GameObject[] cauchemarObjects;
+    private GameObject[] reveObjects;
 
     private void Awake()
     {

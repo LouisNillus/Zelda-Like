@@ -21,5 +21,4 @@ public class PuzzleEnter : MonoBehaviour
             escalier.enabled = true;
         }
     }
-
 }
