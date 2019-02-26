@@ -37,11 +37,18 @@ public class CharacterController : MonoBehaviour
 
     private Collider2D[] hitResult = new Collider2D[10];
 
+    //Lié a Ability1
     public GameObject seeAbility;
     public ParticleSystem notSeeAbility;
 
+    //Liste des objets qu'il y'a en Cauchemar et Reve
     public GameObject[] cauchemarObjects;
     public GameObject[] reveObjects;
+
+    private void Awake()
+    {
+        GoToDream();
+    }
 
     void Start()
     {
@@ -107,6 +114,9 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    /**************************************
+     * Attaque Simple (A Retravailler)    *
+     **************************************/
     void IsAttacking()
     {
         if (Input.GetKeyDown("joystick 1 button 0") || Input.GetKeyDown(KeyCode.E))
@@ -126,40 +136,47 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-
+    /**************************************
+     * Permet d'aller en mode Cauchemar   *
+     **************************************/
     void GoToNightmare()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
         reve = false;
 
-        reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
+        reveObjects      = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
         cauchemarObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnCauchemar");
 
-        foreach (GameObject reveObject in reveObjects)
+        foreach (GameObject reveObject in reveObjects)  // Pour chaque object avec le tag "CeQuiApparaitEnReve", je desactive le spriteRenderer et active le isTrigger
         {
             if (reveObject.GetComponent<SpriteRenderer>() != null)
             {
                 reveObject.GetComponent<SpriteRenderer>().enabled = false;
-            }
-            else
-            {
-                reveObject.GetComponent<BoxCollider2D>().isTrigger = false;
+
+                if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
+                {
+                    reveObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                }
             }
         }
 
-        foreach (GameObject cauchemarObject in cauchemarObjects)
+        foreach (GameObject cauchemarObject in cauchemarObjects) // Pour chaque object avec le tag "CeQuiApparaitEnCauchemar", j'active le spriteRenderer et desactive le isTrigger
         {
             if (cauchemarObject.GetComponent<SpriteRenderer>() != null)
             {
                 cauchemarObject.GetComponent<SpriteRenderer>().enabled = true;
-            }
-            else
-            {
-                cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = false;
+
+                if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
+                {
+                    cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = false;
+                }
             }
         }
     }
-    
+
+    /*********************************
+     * Permet d'aller en mode Reve   *
+     *********************************/
     void GoToDream()
     {
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
@@ -170,29 +187,34 @@ public class CharacterController : MonoBehaviour
 
         foreach (GameObject cauchemarObject in cauchemarObjects)
         {
-            if (cauchemarObject.GetComponent<SpriteRenderer>() != null)
+            if (cauchemarObject.GetComponent<SpriteRenderer>() != null) // Pour chaque object avec le tag "CeQuiApparaitEnCauchemar", je desactive le spriteRenderer et active le isTrigger
             {
                 cauchemarObject.GetComponent<SpriteRenderer>().enabled = false;
-            }
-            else
-            {
-                cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = true;
+
+                if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
+                {
+                    cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                }
             }
         }
 
-        foreach (GameObject reveObject in reveObjects)
+        foreach (GameObject reveObject in reveObjects) // Pour chaque object avec le tag "CeQuiApparaitEnReve", j'active le spriteRenderer et desactive le isTrigger
         {
             if (reveObject.GetComponent<SpriteRenderer>() != null)
             {
                 reveObject.GetComponent<SpriteRenderer>().enabled = true;
-            }
-            else
-            {
-                reveObject.GetComponent<BoxCollider2D>().isTrigger = false;
+
+                if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
+                {
+                    reveObject.GetComponent<BoxCollider2D>().isTrigger = false;
+                }
             }
         }
     }
 
+    /*********************************************
+     * Condition de Mort (Animation a rajouter)  *
+     *********************************************/
     void isDead(int hp)
     {
         if(hp <= 0)
@@ -201,15 +223,13 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+
+    /***************************
+     * Abilité du monde "Vue"  *
+     ***************************/
     void Ability1()
     {
-        if(Input.GetKeyDown("joystick 1 button 1") && !reve)
-        {
-            Instantiate(seeAbility, transform.position, Quaternion.identity);
-        }
-        if (Input.GetKeyDown("joystick 1 button 1") && reve)
-        {
-           Instantiate(notSeeAbility, transform.position, Quaternion.identity);  
-        }
+        if (Input.GetKeyDown("joystick 1 button 1") && !reve) { Instantiate(seeAbility,    transform.position, Quaternion.identity);} //Place une zone écartant les particules 
+        if (Input.GetKeyDown("joystick 1 button 1") && reve)  { Instantiate(notSeeAbility, transform.position, Quaternion.identity);} //Place une zone qui garde les particules à l'intérieur (A travailler)       
     }
 }
