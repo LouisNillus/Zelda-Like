@@ -9,6 +9,7 @@ TagManager:
   - CeQuiApparaitEnCauchemar
   - CeQuiApparaitEnReve
   - Enemy
+  - Reve
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - PuzzleOndes
-  - 
+  - Items
+  - VideItems
   - 
   - 
   - 
