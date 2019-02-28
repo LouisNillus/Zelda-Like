@@ -53,7 +53,6 @@ public class GPSAbility : MonoBehaviour
         if(Input.GetKeyDown("joystick 1 button 1") && canBeLaunched == true)
         {
             isLaunching = true;
-            Debug.Log("Je lance mon GPS");
             LaunchGPS();
         }
 
