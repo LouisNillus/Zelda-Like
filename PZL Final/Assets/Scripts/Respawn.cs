@@ -26,14 +26,12 @@ public class Respawn : MonoBehaviour
     {
         if (collision.gameObject.name.Contains("pillar") )
         {
-            Debug.Log("Coucou cauchemar");
             Destroy(cubeNEnCours);
             Destroy(cubeDEnCours);
             respawnBox();
         }
         else if (collision.gameObject.tag == "CeQuiApparaitEnReve")
         {
-            Debug.Log("Coucou reve");
             Destroy(cubeDEnCours);
             Destroy(cubeNEnCours);
             respawnBox();
@@ -44,9 +42,6 @@ public class Respawn : MonoBehaviour
     {
         GameObject SaveD = cubeD;
         GameObject SaveN = cubeN;
-
-        Debug.Log(cubeD);
-        Debug.Log(cubeN);
 
         GameObject newBox = Instantiate(cubeD , objectPos, Quaternion.identity);
         GameObject newBox2 = Instantiate(cubeN, objectPos, Quaternion.identity);
@@ -67,8 +62,5 @@ public class Respawn : MonoBehaviour
             newBox2.GetComponent<SpriteRenderer>().enabled = false;
             newBox.GetComponent<SpriteRenderer>().enabled = true;
         }
-
-        /*cubeDEnCours.GetComponent<DistanceJoint2D>().distance = 0.005f;
-        cubeNEnCours.GetComponent<DistanceJoint2D>().distance = 0.005f;*/
     }
 }

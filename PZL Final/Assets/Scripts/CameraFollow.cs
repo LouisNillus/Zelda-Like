@@ -24,6 +24,8 @@ public class CameraFollow : MonoBehaviour
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
+        CubeD = GameObject.Find("CubeD");
+
         if (CubeD != null)
         {
             Rigidbody2D rbCube = CubeD.GetComponent<Rigidbody2D>();
