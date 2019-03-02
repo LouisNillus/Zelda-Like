@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4532627879780178}
   - component: {fileID: 212116208919893890}
-  - component: {fileID: 114426179991790728}
   - component: {fileID: 114035321355269620}
   - component: {fileID: 50295721436772960}
-  m_Layer: 0
+  - component: {fileID: 114818645699324362}
+  m_Layer: 14
   m_Name: ParalaxStar
   m_TagString: ParalaxBackground
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a664a6a406e89a4a8991cdc299454de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114426179991790728
+--- !u!114 &114818645699324362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1575f56e58fdc42b12f57d1b1abc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0.2
+  speed: 0.3
 --- !u!212 &212116208919893890
 SpriteRenderer:
   m_ObjectHideFlags: 1

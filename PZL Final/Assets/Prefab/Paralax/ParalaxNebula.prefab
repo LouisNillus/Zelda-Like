@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4416407772076612}
   - component: {fileID: 212014367655554184}
-  - component: {fileID: 114041429684671734}
   - component: {fileID: 114390082855026756}
   - component: {fileID: 50874750226721762}
-  m_Layer: 0
+  - component: {fileID: 114122908337735372}
+  m_Layer: 14
   m_Name: ParalaxNebula
   m_TagString: ParalaxBackground
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114041429684671734
+--- !u!114 &114122908337735372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1575f56e58fdc42b12f57d1b1abc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0.25
+  speed: 0.25
 --- !u!114 &114390082855026756
 MonoBehaviour:
   m_ObjectHideFlags: 1

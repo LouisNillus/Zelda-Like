@@ -8,36 +8,56 @@ public class ParalaxSpawnBackground : MonoBehaviour
     public GameObject paralaxStar;
     public GameObject paralaxDust;
     public GameObject paralaxNebula;
+    public GameObject backgroundCamera;
 
     private int counter = 0;
+    private int numberBg = 0;
     private int random = 0;
     private Vector3 randomPosition;
+    private bool isBackground = false;
 
-	void Start ()
-    {
-		
-	}
+    Transform transCamera;
+    Camera projCam;
 
-	void FixedUpdate ()
+
+    private void Awake()
     {
+        transCamera = GetComponent<Transform>();
+        projCam = GetComponent<Camera>();
+    }
+
+    private void Start()
+    {
+        projCam.orthographic = false;
+        projCam.orthographic = true;
+    }
+
+    void FixedUpdate()
+    {
+        
+
         //Spawn Background
-        if (counter == 0 || counter >= 4000)
+
+        for (int i = 0; i < 24; i= i + 5)
         {
-            randomPosition.x = -10;
-            randomPosition.y = 0;
-            randomPosition.z = 0;
+            if (counter == 0 || counter >= 4000)
+            {
+                randomPosition.x = transCamera.position.x;
+                randomPosition.y = transCamera.position.y + i;
+                randomPosition.z = 0;
+                randomPosition.y = randomPosition.y + i;
 
-            GameObject instance = (GameObject)GameObject.Instantiate(paralaxBackground, randomPosition, paralaxBackground.transform.rotation);
-            instance.transform.parent = GameObject.FindGameObjectWithTag("ParalaxBackground").transform;
-            counter = 0;
+                GameObject instance = (GameObject)GameObject.Instantiate(paralaxBackground, randomPosition, paralaxBackground.transform.rotation);
+                instance.transform.parent = GameObject.FindGameObjectWithTag("ParalaxBackground").transform;
+                counter = 0;
+            }
         }
-
         //Spawn Nebula
         if (counter == 400 || counter == 2400)
         {
             random = Mathf.RoundToInt(Random.Range(1, 1.99f));
-            randomPosition.x = -5.4f;
-            randomPosition.y = Random.Range(-6, 6);
+            randomPosition.x = transCamera.position.x - 5.9f;
+            randomPosition.y = Random.Range(transCamera.position.y - 4.56f, transCamera.position.y + 4.44f);
             randomPosition.z = 0;
 
             switch (random)
@@ -54,8 +74,8 @@ public class ParalaxSpawnBackground : MonoBehaviour
         if (counter == 500 || counter == 1500 || counter == 2500 || counter == 3500)
         {
             random = Mathf.RoundToInt(Random.Range(1, 1.99f));
-            randomPosition.x = -4.7f;
-            randomPosition.y = Random.Range(-6, 6);
+            randomPosition.x = transCamera.position.x - 3.8f;
+            randomPosition.y = Random.Range(transCamera.position.y - 2.16f, transCamera.position.y + 1.94f);
             randomPosition.z = 0;
 
             switch (random)
@@ -72,8 +92,8 @@ public class ParalaxSpawnBackground : MonoBehaviour
         if (counter == 1 || counter == 750 || counter == 2500 || counter == 3000 || counter == 3750)
         {
             random = Mathf.RoundToInt(Random.Range(1, 1.99f));
-            randomPosition.x = -3.3f;
-            randomPosition.y = Random.Range(-6, 6);
+            randomPosition.x = transCamera.position.x - 2.5f;
+            randomPosition.y = Random.Range(transCamera.position.y - 1.16f, transCamera.position.y + 1.04f);
             randomPosition.z = 0;
 
             switch (random)

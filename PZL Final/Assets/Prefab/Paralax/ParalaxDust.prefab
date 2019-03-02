@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4966401160342672}
   - component: {fileID: 212099416471586240}
-  - component: {fileID: 114021175254735502}
   - component: {fileID: 114969974229827214}
   - component: {fileID: 50357367679488700}
-  m_Layer: 0
+  - component: {fileID: 114634582667836968}
+  m_Layer: 14
   m_Name: ParalaxDust
   m_TagString: ParalaxBackground
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114021175254735502
+--- !u!114 &114634582667836968
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1575f56e58fdc42b12f57d1b1abc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0.15
+  speed: 0.2
 --- !u!114 &114969974229827214
 MonoBehaviour:
   m_ObjectHideFlags: 1

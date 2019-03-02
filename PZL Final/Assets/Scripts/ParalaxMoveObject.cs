@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class ParalaxMoveObject : MonoBehaviour
 {
-    [SerializeField] float speedX = 1f;
+    [SerializeField] float speed = 1f;
 
 	void Start ()
     {
-        GetComponent<Rigidbody2D>().velocity = transform.right * speedX;
-	}
-	
-
-	void Update ()
-    {
-		
-	}
+        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+    }
 }

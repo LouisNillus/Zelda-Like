@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4776150501711066}
   - component: {fileID: 212689200692104082}
-  - component: {fileID: 114262928619093666}
   - component: {fileID: 114389402935504448}
   - component: {fileID: 50619296489336872}
-  m_Layer: 0
+  - component: {fileID: 114967941840228758}
+  m_Layer: 14
   m_Name: ParalaxBackground
   m_TagString: ParalaxBackground
   m_Icon: {fileID: 0}
@@ -63,18 +63,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114262928619093666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1254119897468184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1575f56e58fdc42b12f57d1b1abc09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 0.1
 --- !u!114 &114389402935504448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,6 +74,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a664a6a406e89a4a8991cdc299454de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114967941840228758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254119897468184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1575f56e58fdc42b12f57d1b1abc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!212 &212689200692104082
 SpriteRenderer:
   m_ObjectHideFlags: 1
