@@ -8,6 +8,7 @@ TagManager:
   - Ennemy
   - CeQuiApparaitEnCauchemar
   - CeQuiApparaitEnReve
+  - ParalaxBackground
   - Enemy
   - Reve
   - VerticalMovingObject
@@ -22,6 +23,13 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Reve
+  - Cauchemar
+  - Walls
+  - Enemy
+  - ParticleWall
+  - ParalaxBackground
   - Items
   - VideItems
   - 
