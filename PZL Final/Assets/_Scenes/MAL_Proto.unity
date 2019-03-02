@@ -1754,7 +1754,6 @@ MonoBehaviour:
   myPlayer: {fileID: 1332335493}
   myTarget: {fileID: 0}
   myParticles: {fileID: 933356161}
-  controller: {fileID: 1332335496}
 --- !u!4 &428933832
 Transform:
   m_ObjectHideFlags: 0
@@ -23086,7 +23085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f86eb31f05f6b479554cce23411fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myGPS: {fileID: 1967375995}
+  myGPS: {fileID: 0}
 --- !u!1 &704299000
 GameObject:
   m_ObjectHideFlags: 0
@@ -28323,7 +28322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f86eb31f05f6b479554cce23411fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myGPS: {fileID: 1967375995}
+  myGPS: {fileID: 0}
 --- !u!1 &933356161
 GameObject:
   m_ObjectHideFlags: 0
@@ -28355,7 +28354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTarget: {fileID: 0}
-  baitAbility: {fileID: 428933831}
+  baitAbility: {fileID: 0}
 --- !u!58 &933356163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -33760,11 +33759,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcbea01a4e974e4cac9dfa1720ec706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 2117692252}
-  dialogueText: {fileID: 777503329}
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
   audio: {fileID: 0}
   keySound: {fileID: 0}
-  animator: {fileID: 1061210532}
+  animator: {fileID: 0}
   monJoueur: {fileID: 1332335492}
 --- !u!4 &1091610439
 Transform:
@@ -56425,7 +56424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f86eb31f05f6b479554cce23411fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myGPS: {fileID: 1967375995}
+  myGPS: {fileID: 0}
 --- !u!1 &1774046057
 GameObject:
   m_ObjectHideFlags: 0
@@ -56809,7 +56808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f86eb31f05f6b479554cce23411fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myGPS: {fileID: 1967375995}
+  myGPS: {fileID: 0}
 --- !u!1 &1922161567
 GameObject:
   m_ObjectHideFlags: 0
