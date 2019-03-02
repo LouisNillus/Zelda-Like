@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50887408466823790}
   - component: {fileID: 61153891791795402}
   - component: {fileID: 232080987592583774}
+  - component: {fileID: 114404989264407616}
   m_Layer: 0
   m_Name: CubeD
   m_TagString: CeQuiApparaitEnReve
@@ -88,6 +89,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37320286, y: 0.32459903}
   m_EdgeRadius: 0
+--- !u!114 &114404989264407616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705068138502308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7e900af8e55534baf28082d33892a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeD: {fileID: 0}
+  cubeN: {fileID: 0}
+  cubeDEnCours: {fileID: 0}
+  cubeNEnCours: {fileID: 0}
+  objectPos: {x: 0, y: 0, z: 0}
 --- !u!212 &212657703567735852
 SpriteRenderer:
   m_ObjectHideFlags: 1

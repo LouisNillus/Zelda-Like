@@ -13,6 +13,7 @@ TagManager:
   - key
   - CeQuiApparaitEnCauchemar
   - CeQuiApparaitEnReve
+  - DeathZone
   layers:
   - Default
   - TransparentFX

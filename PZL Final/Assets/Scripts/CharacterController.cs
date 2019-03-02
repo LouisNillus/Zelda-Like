@@ -100,7 +100,7 @@ public class CharacterController : MonoBehaviour
     }
 
     void IsMoving()
-    { 
+    {
         if ((moveX > 0 || moveX < 0) || (moveY > 0 || moveY < 0))
         {
             animator.SetFloat("moveX", moveX);
@@ -144,19 +144,18 @@ public class CharacterController : MonoBehaviour
         tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
         reve = false;
 
-        reveObjects      = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
+        reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
         cauchemarObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnCauchemar");
 
         foreach (GameObject reveObject in reveObjects)  // Pour chaque object avec le tag "CeQuiApparaitEnReve", je desactive le spriteRenderer et active le isTrigger
-        {
+        {      
             if (reveObject.GetComponent<SpriteRenderer>() != null)
             {
                 reveObject.GetComponent<SpriteRenderer>().enabled = false;
-
-                if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
-                {
-                    reveObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                }
+            }
+            if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
+            {
+                reveObject.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
 
@@ -165,11 +164,10 @@ public class CharacterController : MonoBehaviour
             if (cauchemarObject.GetComponent<SpriteRenderer>() != null)
             {
                 cauchemarObject.GetComponent<SpriteRenderer>().enabled = true;
-
-                if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
-                {
-                    cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = false;
-                }
+            }
+            if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
+            {
+                cauchemarObject.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }
@@ -187,27 +185,26 @@ public class CharacterController : MonoBehaviour
 
         foreach (GameObject cauchemarObject in cauchemarObjects)
         {
+            
             if (cauchemarObject.GetComponent<SpriteRenderer>() != null) // Pour chaque object avec le tag "CeQuiApparaitEnCauchemar", je desactive le spriteRenderer et active le isTrigger
             {
                 cauchemarObject.GetComponent<SpriteRenderer>().enabled = false;
-
-                if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
-                {
-                    cauchemarObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                }
+            }
+            if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
+            {
+                cauchemarObject.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
 
         foreach (GameObject reveObject in reveObjects) // Pour chaque object avec le tag "CeQuiApparaitEnReve", j'active le spriteRenderer et desactive le isTrigger
-        {
+        {   
             if (reveObject.GetComponent<SpriteRenderer>() != null)
             {
                 reveObject.GetComponent<SpriteRenderer>().enabled = true;
-
-                if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
-                {
-                    reveObject.GetComponent<BoxCollider2D>().isTrigger = false;
-                }
+            }
+            if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
+            {
+                reveObject.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }

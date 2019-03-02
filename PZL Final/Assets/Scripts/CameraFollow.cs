@@ -24,21 +24,30 @@ public class CameraFollow : MonoBehaviour
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
-        Rigidbody2D rbCube = CubeD.GetComponent<Rigidbody2D>();
+        if (CubeD != null)
+        {
+            Rigidbody2D rbCube = CubeD.GetComponent<Rigidbody2D>();
 
-        transform.position = player.transform.position + offset;
+            transform.position = player.transform.position + offset;
 
-        if (rbCube.velocity.x <= 0.4f)
+            if (rbCube.velocity.x <= 0.4f)
+            {
+                mainCamera.enabled = true;
+                cubeCamera.enabled = false;
+                playerCamera.enabled = false;
+            }
+            else
+            {
+                mainCamera.enabled = false;
+                cubeCamera.enabled = true;
+                playerCamera.enabled = true;
+            }
+        }
+        else
         {
             mainCamera.enabled = true;
             cubeCamera.enabled = false;
             playerCamera.enabled = false;
-        }
-        else
-        {
-            mainCamera.enabled = false;
-            cubeCamera.enabled = true;
-            playerCamera.enabled = true;
         }
     }
 }

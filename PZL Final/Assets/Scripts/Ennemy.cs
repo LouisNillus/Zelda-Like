@@ -59,20 +59,23 @@ public class Ennemy : MonoBehaviour
     
     void Cauchemar()
     {
-       //Enemy move backward and throw projectile
-        if(Vector2.Distance(transform.position, target.position) < backwardDistance)
+        //Enemy move backward and throw projectile
+        /*if(Vector2.Distance(transform.position, target.position) < backwardDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
-        }
+        }*/
 
-        if (timeForShoot <= 0)
+        if (isDetected)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            timeForShoot = 2f;
-        }
-        else
-        {
-            timeForShoot -= Time.deltaTime;
+            if (timeForShoot <= 0)
+            {
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                timeForShoot = 2f;
+            }
+            else
+            {
+                timeForShoot -= Time.deltaTime;
+            }
         }
     }
 
@@ -90,6 +93,10 @@ public class Ennemy : MonoBehaviour
         if(collision.tag == "Player")
         {
             isDetected = true;
+        }
+        if (collision.tag == "DeathZone")
+        {
+            Destroy(gameObject, 0.5f); //Enlever le delai lorsque que y'aura l'animation
         }
     }
 
