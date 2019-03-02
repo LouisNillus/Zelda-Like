@@ -15,6 +15,8 @@ public class CameraFollowCube : MonoBehaviour
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
+        CubeD = GameObject.Find("CubeD");
+
         if (CubeD != null)
         {
             transform.position = CubeD.transform.position + offsetCube;
