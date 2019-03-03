@@ -6,11 +6,13 @@ public class Zoom : MonoBehaviour
 {
 
     public Camera myCam;
+    public AudioSource enteringAudio;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
+            enteringAudio.Play();
             myCam.orthographicSize = 1.5f;
         }
     }

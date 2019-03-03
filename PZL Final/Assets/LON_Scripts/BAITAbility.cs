@@ -10,9 +10,12 @@ public class BAITAbility : MonoBehaviour
     public AIDestinationSetter myTarget;
     public GameObject myParticles;
     public CharacterController characterController;
+    public AbilityManager abilityManager;
 
     // Booléens Bait
     public bool canBait = true;
+    public float baitCooldownTime;
+    public bool baitIsLaunched = false;
     private bool followingPlayer = true;
 
     // Start
@@ -28,7 +31,7 @@ public class BAITAbility : MonoBehaviour
         {
             canBait = false;
         }
-        else
+        else if(characterController.reve == false)
         {
             canBait = true;
         }
@@ -43,7 +46,7 @@ public class BAITAbility : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown("joystick 1 button 1") && canBait == true)
+        if (Input.GetKeyDown("joystick 1 button 1") && canBait == true && baitIsLaunched == false)
         {
             LaunchBait();
         }
@@ -63,7 +66,9 @@ public class BAITAbility : MonoBehaviour
     IEnumerator CoolDownBait()
     {
         canBait = false;
-        yield return new WaitForSeconds(8);
+        baitIsLaunched = true;
+        yield return new WaitForSeconds(baitCooldownTime);
+        baitIsLaunched = false;
         canBait = true;
     }
 
@@ -71,8 +76,9 @@ public class BAITAbility : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         myParticles.SetActive(false);
-        myTarget.target = null;
         followingPlayer = true;
+        myTarget.target = null;
+
     }
 
 }

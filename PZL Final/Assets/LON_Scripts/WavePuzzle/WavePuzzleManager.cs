@@ -69,6 +69,7 @@ public class WavePuzzleManager : MonoBehaviour
             wpshape.rotation = new Vector3(0, 0, angleValue);
 
             waveParticles.Emit(1);
+            StartCoroutine(WaitBeforeWaveAgain());
         }
     }
 
@@ -105,6 +106,13 @@ public class WavePuzzleManager : MonoBehaviour
         key2.key2Done = false;
         key3.key3Done = false;
         key4.key4Done = false;
+    }
+
+    IEnumerator WaitBeforeWaveAgain()
+    {
+        canLaunchWaves = false;
+        yield return new WaitForSeconds(3);
+        canLaunchWaves = true;
     }
 
 }

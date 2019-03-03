@@ -11,6 +11,9 @@ public class Key1 : MonoBehaviour
     public Key3 key3;
     public Key4 key4;
 
+    public List<AudioClip> DongSoundsList = new List<AudioClip>();
+    public AudioSource keyAudio;
+
     public WavePuzzleManager wavePuzzleManager;
 
     public List<Transform> Key1Bounds = new List<Transform>();
@@ -38,7 +41,8 @@ public class Key1 : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("ouais!");
+        keyAudio.clip = DongSoundsList[Random.Range(0, DongSoundsList.Count)];
+        keyAudio.Play();
 
         if (key1Done == false && key2.key2Done == false && key3.key3Done == false && key4.key4Done == false)
         {

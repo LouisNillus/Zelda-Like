@@ -11,6 +11,9 @@ public class Key3 : MonoBehaviour
     public Key2 key2;
     public Key4 key4;
 
+    public AudioSource keyAudio;
+    public List<AudioClip> DongSoundsList = new List<AudioClip>();
+
     public WavePuzzleManager wavePuzzleManager;
 
     public List<Transform> Key3Bounds = new List<Transform>();
@@ -24,13 +27,13 @@ public class Key3 : MonoBehaviour
     // Update
     void Update()
     {
-        //BoundLeft
+        //BoundRight
         if (this.transform.position.x < Key3Bounds[0].position.x)
         {
             this.transform.position = new Vector2(Key3Bounds[0].position.x, this.transform.position.y);
         }
 
-        //BoundRight
+        //BoundLeft
         if (this.transform.position.x > Key3Bounds[1].position.x)
         {
             this.transform.position = new Vector2(Key3Bounds[1].position.x, this.transform.position.y);
@@ -39,6 +42,9 @@ public class Key3 : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        keyAudio.clip = DongSoundsList[Random.Range(0, DongSoundsList.Count)];
+        keyAudio.Play();
+
         if (key1.key1Done == true && key2.key2Done == true && key3Done == false && key4.key4Done == false)
         {
             key3Done = true;

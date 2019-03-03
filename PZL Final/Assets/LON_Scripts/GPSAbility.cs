@@ -11,12 +11,13 @@ public class GPSAbility : MonoBehaviour
     public CharacterController characterController;
 
     public int i = 0;
+    public float gpsCooldownTime;
 
     private AIDestinationSetter targetManager;
 
     // Booléens GPS
-    private bool canBeLaunched = true;
-    private bool isLaunching = false;
+    public bool canGPS = true;
+    public bool isLaunching = false;
 
     public List<Transform> waypoints = new List<Transform>();
 
@@ -32,11 +33,11 @@ public class GPSAbility : MonoBehaviour
     {
         if (characterController.reve == true)
         {
-            canBeLaunched = true;
+            canGPS = true;
         }
         else
         {
-            canBeLaunched = false;
+            canGPS = false;
         }
 
 
@@ -50,7 +51,7 @@ public class GPSAbility : MonoBehaviour
         }
 
 
-        if(Input.GetKeyDown("joystick 1 button 1") && canBeLaunched == true)
+        if(Input.GetKeyDown("joystick 1 button 1") && canGPS == true)
         {
             isLaunching = true;
             LaunchGPS();
@@ -68,13 +69,11 @@ public class GPSAbility : MonoBehaviour
 
     }
 
-
-
     IEnumerator CoolDownGPS()
     {
-        canBeLaunched = false;
-        yield return new WaitForSeconds(5);
-        canBeLaunched = true;
+        canGPS = false;
+        yield return new WaitForSeconds(gpsCooldownTime);
+        canGPS = true;
     }
 
 
