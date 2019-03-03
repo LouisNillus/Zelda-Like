@@ -13,7 +13,7 @@ public class Key4 : MonoBehaviour
 
     public WavePuzzleManager wavePuzzleManager;
 
-
+    public List<Transform> Key4Bounds = new List<Transform>();
     // Start
     void Start()
     {
@@ -23,7 +23,17 @@ public class Key4 : MonoBehaviour
     // Update
     void Update()
     {
+        //BoundRight
+        if (this.transform.position.x < Key4Bounds[0].position.x)
+        {
+            this.transform.position = new Vector2(Key4Bounds[0].position.x, this.transform.position.y);
+        }
 
+        //BoundLeft
+        if (this.transform.position.x > Key4Bounds[1].position.x)
+        {
+            this.transform.position = new Vector2(Key4Bounds[1].position.x, this.transform.position.y);
+        }
     }
 
     private void OnParticleCollision(GameObject other)

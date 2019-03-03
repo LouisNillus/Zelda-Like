@@ -24,6 +24,7 @@ public class WavePuzzleManager : MonoBehaviour
     public ParticleSystem waveParticles;
     public Transform waveParticlesTransform;
 
+
     void Update()
     {
         if (wavePuzzleComplete == true)

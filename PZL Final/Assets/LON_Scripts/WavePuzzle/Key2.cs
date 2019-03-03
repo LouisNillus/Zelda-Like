@@ -13,6 +13,8 @@ public class Key2 : MonoBehaviour
 
     public WavePuzzleManager wavePuzzleManager;
 
+    public List<Transform> Key2Bounds = new List<Transform>();
+
 
     // Start
     void Start()
@@ -23,6 +25,18 @@ public class Key2 : MonoBehaviour
     // Update
     void Update()
     {
+
+        //BoundUp
+        if (this.transform.position.y > Key2Bounds[0].position.y)
+        {
+            this.transform.position = new Vector2(this.transform.position.x, Key2Bounds[0].position.y);
+        }
+
+        //BoundDown
+        if (this.transform.position.y < Key2Bounds[1].position.y)
+        {
+            this.transform.position = new Vector2(this.transform.position.x, Key2Bounds[1].position.y);
+        }
 
     }
 
