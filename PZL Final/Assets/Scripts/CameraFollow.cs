@@ -5,6 +5,7 @@ public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
     public GameObject CubeD;
+    public GameObject fluff;
 
     public Camera mainCamera;
     public Camera cubeCamera;
@@ -13,12 +14,15 @@ public class CameraFollow : MonoBehaviour
     private Vector3 offset;
     private Vector3 offsetCube;
 
+    private bool bSpawnEnemy;
+
     void Start()
     {
         offset = transform.position - player.transform.position;
         cubeCamera.enabled = false;
         playerCamera.enabled = false;
         mainCamera.enabled = true;
+        bSpawnEnemy = true;
     }
 
     // LateUpdate is called after Update each frame
@@ -43,6 +47,12 @@ public class CameraFollow : MonoBehaviour
                 mainCamera.enabled = false;
                 cubeCamera.enabled = true;
                 playerCamera.enabled = true;
+
+                if (bSpawnEnemy == true)
+                {
+                    PuzzleEnemy();
+                    bSpawnEnemy = false;
+                }
             }
         }
         else
@@ -51,5 +61,18 @@ public class CameraFollow : MonoBehaviour
             cubeCamera.enabled = false;
             playerCamera.enabled = false;
         }
+    }
+
+    void PuzzleEnemy()
+    {
+        GameObject SpawnEnemy  = Instantiate(fluff, new Vector2(-2f,0.5f), Quaternion.identity);
+        GameObject SpawnEnemy2 = Instantiate(fluff, new Vector2(0.5f, 0.5f), Quaternion.identity);
+        GameObject SpawnEnemy3 = Instantiate(fluff, new Vector2(-2f, -2f), Quaternion.identity);
+        GameObject SpawnEnemy4 = Instantiate(fluff, new Vector2(0.5f, -2f), Quaternion.identity);
+    }
+
+    void PuzzleAOE()
+    {
+
     }
 }
