@@ -17,19 +17,10 @@ public class ParalaxSpawnBackground : MonoBehaviour
     private bool isBackground = false;
 
     Transform transCamera;
-    Camera projCam;
-
 
     private void Awake()
     {
         transCamera = GetComponent<Transform>();
-        projCam = GetComponent<Camera>();
-    }
-
-    private void Start()
-    {
-        projCam.orthographic = false;
-        projCam.orthographic = true;
     }
 
     void FixedUpdate()
