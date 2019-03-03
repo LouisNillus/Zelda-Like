@@ -9,7 +9,7 @@ public class Ennemy : MonoBehaviour
     public  GameObject  projectile;
     private Transform   target    ;
 
-    public  float speed = 1f           ;
+    public  float speed = 0.5f           ;
     private float backwardDistance = 3f; //A partir de cette distance, l'ennemi recule
     private float timeForShoot = 2f  ;
 
@@ -24,7 +24,6 @@ public class Ennemy : MonoBehaviour
         animator = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        
     }
 
     private void Update()
@@ -45,7 +44,6 @@ public class Ennemy : MonoBehaviour
         {
             Cauchemar();
         }
-        //TEST
     }
 
     void Reve()
@@ -64,7 +62,7 @@ public class Ennemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
         }*/
-
+        /*
         if (isDetected)
         {
             if (timeForShoot <= 0)
@@ -76,6 +74,11 @@ public class Ennemy : MonoBehaviour
             {
                 timeForShoot -= Time.deltaTime;
             }
+        }*/
+
+        if (isDetected)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
 
