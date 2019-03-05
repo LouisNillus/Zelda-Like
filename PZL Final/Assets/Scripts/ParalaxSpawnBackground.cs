@@ -9,27 +9,18 @@ public class ParalaxSpawnBackground : MonoBehaviour
     public GameObject paralaxDust;
     public GameObject paralaxNebula;
     public GameObject backgroundCamera;
+    public int counter = 0;
 
-    private int counter = 0;
     private int numberBg = 0;
     private int random = 0;
     private Vector3 randomPosition;
     private bool isBackground = false;
 
     Transform transCamera;
-    Camera projCam;
-
 
     private void Awake()
     {
         transCamera = GetComponent<Transform>();
-        projCam = GetComponent<Camera>();
-    }
-
-    private void Start()
-    {
-        projCam.orthographic = false;
-        projCam.orthographic = true;
     }
 
     void FixedUpdate()
