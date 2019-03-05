@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212795551150148552}
   - component: {fileID: 95456878801997968}
   - component: {fileID: 114925601190901648}
+  - component: {fileID: 50700226529316388}
   m_Layer: 0
   m_Name: Live
   m_TagString: Untagged
@@ -36,12 +37,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1189892996671340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4030004, y: -0.3, z: 0}
+  m_LocalPosition: {x: -1.374, y: -0.853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50700226529316388
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1189892996671340}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!95 &95456878801997968
 Animator:
   serializedVersion: 3
@@ -79,7 +100,8 @@ MonoBehaviour:
   isKilled: 0
   pushPower: 2
   weight: 6
-  tilemap: {fileID: 0}
+  tilemapD: {fileID: 0}
+  tilemapN: {fileID: 0}
   dialogueManagerObject: {fileID: 0}
   dialogueTriggerObject: {fileID: 0}
   mySliderHP: {fileID: 0}
@@ -119,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a93ba38ad597404ab1fabc6921d5814, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -27,7 +27,7 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private GameMaster gameMaster;
 
-    Animator animator;
+    public Animator animator;
     DialogueManager dialogueManager;
     DialogueTrigger dialogueTrigger;
     Slider sliderHP;
@@ -55,7 +55,7 @@ public class CharacterController : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         sliderHP = mySliderHP.GetComponent<Slider>();
         //tilemapD = GameObject.FindGameObjectWithTag("Reve");
@@ -149,6 +149,7 @@ public class CharacterController : MonoBehaviour
         tilemapD.GetComponent<TilemapRenderer>().enabled=false;
         tilemapN.GetComponent<TilemapRenderer>().enabled = true;
         reve = false;
+        animator.SetBool("isDream", false);
 
         reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
         cauchemarObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnCauchemar");
@@ -187,6 +188,7 @@ public class CharacterController : MonoBehaviour
         tilemapD.GetComponent<TilemapRenderer>().enabled = true;
         tilemapN.GetComponent<TilemapRenderer>().enabled = false;
         reve = true;
+        animator.SetBool("isDream", true);
 
         reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
         cauchemarObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnCauchemar");
@@ -239,13 +241,13 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "DeathZone")
         {
             Destroy(gameObject,0.2f); //Enlever le delai lorsque que y'aura l'animation
         }
-    }
+    }*/
 
 
     /***************************
