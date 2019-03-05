@@ -31,15 +31,6 @@ public class GPSAbility : MonoBehaviour
 	// Update
 	void Update ()
     {
-        if (characterController.reve == true)
-        {
-            canGPS = true;
-        }
-        else
-        {
-            canGPS = false;
-        }
-
 
         if (isLaunching == false)
         {
@@ -50,30 +41,27 @@ public class GPSAbility : MonoBehaviour
             return;
         }
 
-
-        if(Input.GetKeyDown("joystick 1 button 1") && canGPS == true)
-        {
-            isLaunching = true;
-            LaunchGPS();
-        }
+        LaunchGPS();
 
     }
 
 
     public void LaunchGPS()
     {
-        myParticles.SetActive(true);
-        targetManager.target = waypoints[i];
-        StartCoroutine(CoolDownGPS());
-        StartCoroutine(TimeBeforeDestroy());
-
+        if (Input.GetKeyDown("joystick 1 button 1") && characterController.reve == true && isLaunching == false)
+        {
+            isLaunching = true;
+            myParticles.SetActive(true);
+            targetManager.target = waypoints[i];
+            StartCoroutine(CoolDownGPS());
+            StartCoroutine(TimeBeforeDestroy());
+        }
     }
 
     IEnumerator CoolDownGPS()
     {
-        canGPS = false;
         yield return new WaitForSeconds(gpsCooldownTime);
-        canGPS = true;
+        isLaunching = false;
     }
 
 
@@ -82,7 +70,6 @@ public class GPSAbility : MonoBehaviour
         yield return new WaitForSeconds(3);
         targetManager.target = null;
         myParticles.SetActive(false);
-        isLaunching = false;
     }
 
 

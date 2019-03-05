@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class AbilityManager : MonoBehaviour
 {
 
-    public Image dreamAbility;
-    public Image nightmareAbility;
+    public Image dreamAbilitySelector;
+    public Image nightmareAbilitySelector;
     public CharacterController myPlayer;
 
     public Image dreamCooldown;
@@ -15,8 +15,11 @@ public class AbilityManager : MonoBehaviour
 
     public float refreshRate;
 
-    private bool launchDream = true;
-    private bool launchNightmare = true;
+    [SerializeField]
+    private bool launchDreamCD = true;
+    [SerializeField]
+    private bool launchNightmareCD = true;
+
 
     public GPSAbility gpsAbility;
     public BAITAbility baitAbility;
@@ -24,10 +27,11 @@ public class AbilityManager : MonoBehaviour
 	// Start
 	void Start ()
     {
-		
 
+        dreamCooldown.fillAmount = 0;
+        nightmareCooldown.fillAmount = 0;
 
-	}
+    }
 	
 	// Update
 	void Update ()
@@ -38,60 +42,77 @@ public class AbilityManager : MonoBehaviour
 
     }
 
+
     public void UIAbilityIndicator()
     {
         if (myPlayer.reve == true)
         {
-            nightmareAbility.enabled = false;
-            dreamAbility.enabled = true;
+            nightmareAbilitySelector.enabled = false;
+            dreamAbilitySelector.enabled = true;
         }
         else if (myPlayer.reve == false)
         {
-            dreamAbility.enabled = false;
-            nightmareAbility.enabled = true;
+            dreamAbilitySelector.enabled = false;
+            nightmareAbilitySelector.enabled = true;
         }
     }
+
 
     public void AbilityCooldown()
     {
-        if(gpsAbility.isLaunching == true && launchDream == true)
+        if(gpsAbility.isLaunching == true && launchDreamCD == true)
         {
-            dreamCooldown.enabled = true;
             dreamCooldown.fillAmount = 1;
-            InvokeRepeating("DreamCooldown", 0, gpsAbility.gpsCooldownTime * (1 / (gpsAbility.gpsCooldownTime / refreshRate)));
-            launchDream = false;
+            InvokeRepeating("DreamCooldown", 0, gpsAbility.gpsCooldownTime * (1 / (gpsAbility.gpsCooldownTime / refreshRate)));           
         }
 
-        else if (baitAbility.baitIsLaunched == true && launchNightmare == true)
+
+        if (baitAbility.baitIsLaunched == true && launchNightmareCD == true)
         {
-            nightmareCooldown.enabled = true;
             nightmareCooldown.fillAmount = 1;
             InvokeRepeating("NightmareCooldown", 0, baitAbility.baitCooldownTime * (1 / (baitAbility.baitCooldownTime / refreshRate)));
-            launchNightmare = false;
         }
-
-        if (dreamCooldown.fillAmount == 0)
-        {
-            CancelInvoke("DreamCooldown");
-            launchDream = true;
-        }
-
-        if (nightmareCooldown.fillAmount == 0)
-        {
-            CancelInvoke("NightmareCooldown");
-            launchNightmare = true;
-        }
-
     }
+
 
     public void DreamCooldown()
     {
+        launchDreamCD = false;
         dreamCooldown.fillAmount = dreamCooldown.fillAmount - 1 / (gpsAbility.gpsCooldownTime / refreshRate);
+
+
+        if (dreamCooldown.fillAmount <= 0)
+        {
+            StartCoroutine(DelayResetDreamCD());
+        }
     }
+
 
     public void NightmareCooldown()
     {
-        nightmareCooldown.fillAmount = nightmareCooldown.fillAmount - 1 / (baitAbility.baitCooldownTime / refreshRate); 
+        launchNightmareCD = false;
+        nightmareCooldown.fillAmount = nightmareCooldown.fillAmount - 1 / (baitAbility.baitCooldownTime / refreshRate);
+
+
+        if (nightmareCooldown.fillAmount <= 0)
+        {
+            StartCoroutine(DelayResetNightmareCD());
+        }
+
     }
 
+
+    IEnumerator DelayResetDreamCD()
+    {
+        CancelInvoke("DreamCooldown");
+        yield return new WaitForSeconds(0.1f);
+        launchDreamCD = true;
+    }
+
+    IEnumerator DelayResetNightmareCD()
+    {
+        CancelInvoke("NightmareCooldown");
+        yield return new WaitForSeconds(0.1f);
+        launchNightmareCD = true;
+    }
 }
