@@ -13,10 +13,17 @@ public class WavePuzzleManager : MonoBehaviour
     private float angle = 0f;
 
     [SerializeField]
+    private int waveEmissionCooldown;
+
+    [SerializeField]
     private bool canLaunchWaves = false;
     private bool moveTarget = true;
 
+    private bool isPlayingWinningSong = false;
+
     public bool wavePuzzleComplete = false;
+
+    private bool puzzleEnded = false;
 
     public Transform targetRotator;
     public Transform waveTarget;
@@ -24,24 +31,33 @@ public class WavePuzzleManager : MonoBehaviour
     public ParticleSystem waveParticles;
     public Transform waveParticlesTransform;
 
+    public List<AudioClip> DongSoundsList = new List<AudioClip>();
+
+    public AudioSource winningSound;
+    public AudioSource winningSound2;
+
     void Update()
     {
-        if (wavePuzzleComplete == true)
-        {
-            Debug.Log("YOU MADE IT");
-        }
-
+        StartCoroutine("WaitForNewNote");
+        StartCoroutine("WaitForNewNote2");
         Emitter();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && puzzleEnded == false)
         {
-            pressX.enabled = true;
             canLaunchWaves = true;
 
             InvokeRepeating("MoveWaveTarget", 0.01f, 0.01f);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && puzzleEnded == false)
+        {
+            pressX.enabled = false;
         }
     }
 
@@ -59,7 +75,7 @@ public class WavePuzzleManager : MonoBehaviour
 
     public void Emitter()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2) && canLaunchWaves == true)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2) && canLaunchWaves == true && puzzleEnded == false)
         {
             Vector2 rotationVector = new Vector2(waveTarget.position.x - waveParticlesTransform.position.x, waveTarget.position.y - waveParticlesTransform.position.y);
             float angleValue = Mathf.Atan2(rotationVector.normalized.y, rotationVector.normalized.x) * Mathf.Rad2Deg;
@@ -68,6 +84,7 @@ public class WavePuzzleManager : MonoBehaviour
             wpshape.rotation = new Vector3(0, 0, angleValue);
 
             waveParticles.Emit(1);
+            StartCoroutine(WaitBeforeWaveAgain());
         }
     }
 
@@ -79,11 +96,11 @@ public class WavePuzzleManager : MonoBehaviour
 
         if(Input.GetKey("joystick 1 button 5"))
         {
-            angle = angle - 1f;
+            angle = angle - 0.5f;
         }
         else if (Input.GetKey("joystick 1 button 4"))
         {
-            angle = angle + 1f;
+            angle = angle + 0.5f;
         }
 
         targetRotator.localEulerAngles = new Vector3(0, 0, angle);
@@ -104,6 +121,50 @@ public class WavePuzzleManager : MonoBehaviour
         key2.key2Done = false;
         key3.key3Done = false;
         key4.key4Done = false;
+    }
+
+    IEnumerator WaitBeforeWaveAgain()
+    {
+        canLaunchWaves = false;
+        yield return new WaitForSeconds(waveEmissionCooldown);
+        ResetPuzzle();
+        canLaunchWaves = true;
+    }
+
+    IEnumerator WaitForNewNote()
+    {
+        if (wavePuzzleComplete == true)
+        {
+            puzzleEnded = true;
+
+            isPlayingWinningSong = true;
+            for (int i = 0; i < DongSoundsList.Count/2; i++)
+            {
+                wavePuzzleComplete = false;
+                yield return new WaitForSeconds(1f);
+
+                winningSound.clip = DongSoundsList[Random.Range(0, DongSoundsList.Count)];
+                winningSound.Play();               
+            }
+        }
+    }
+
+    IEnumerator WaitForNewNote2()
+    {
+        if (isPlayingWinningSong == true)
+        {
+            for (int j = 0; j < DongSoundsList.Count/2; j++)
+            {
+                isPlayingWinningSong = false;
+                wavePuzzleComplete = false;
+                yield return new WaitForSeconds(0.5f);
+
+                winningSound2.clip = DongSoundsList[Random.Range(0, DongSoundsList.Count)];
+                winningSound2.Play();
+
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
     }
 
 }

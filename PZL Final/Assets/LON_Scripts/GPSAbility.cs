@@ -11,12 +11,13 @@ public class GPSAbility : MonoBehaviour
     public CharacterController characterController;
 
     public int i = 0;
+    public float gpsCooldownTime;
 
     private AIDestinationSetter targetManager;
 
     // Booléens GPS
-    private bool canBeLaunched = true;
-    private bool isLaunching = false;
+    public bool canGPS = true;
+    public bool isLaunching = false;
 
     public List<Transform> waypoints = new List<Transform>();
 
@@ -30,15 +31,6 @@ public class GPSAbility : MonoBehaviour
 	// Update
 	void Update ()
     {
-        if (characterController.reve == true)
-        {
-            canBeLaunched = true;
-        }
-        else
-        {
-            canBeLaunched = false;
-        }
-
 
         if (isLaunching == false)
         {
@@ -49,32 +41,27 @@ public class GPSAbility : MonoBehaviour
             return;
         }
 
-
-        if(Input.GetKeyDown("joystick 1 button 1") && canBeLaunched == true)
-        {
-            isLaunching = true;
-            LaunchGPS();
-        }
+        LaunchGPS();
 
     }
 
 
     public void LaunchGPS()
     {
-        myParticles.SetActive(true);
-        targetManager.target = waypoints[i];
-        StartCoroutine(CoolDownGPS());
-        StartCoroutine(TimeBeforeDestroy());
-
+        if (Input.GetKeyDown("joystick 1 button 1") && characterController.reve == true && isLaunching == false)
+        {
+            isLaunching = true;
+            myParticles.SetActive(true);
+            targetManager.target = waypoints[i];
+            StartCoroutine(CoolDownGPS());
+            StartCoroutine(TimeBeforeDestroy());
+        }
     }
-
-
 
     IEnumerator CoolDownGPS()
     {
-        canBeLaunched = false;
-        yield return new WaitForSeconds(5);
-        canBeLaunched = true;
+        yield return new WaitForSeconds(gpsCooldownTime);
+        isLaunching = false;
     }
 
 
@@ -83,7 +70,6 @@ public class GPSAbility : MonoBehaviour
         yield return new WaitForSeconds(3);
         targetManager.target = null;
         myParticles.SetActive(false);
-        isLaunching = false;
     }
 
 
