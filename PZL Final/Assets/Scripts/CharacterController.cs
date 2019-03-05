@@ -30,7 +30,8 @@ public class CharacterController : MonoBehaviour
     DialogueTrigger dialogueTrigger;
     Slider sliderHP;
 
-    public GameObject tilemap;
+    public GameObject tilemapD;
+    public GameObject tilemapN;
     public GameObject dialogueManagerObject;
     public GameObject dialogueTriggerObject;
     public GameObject mySliderHP;
@@ -55,7 +56,8 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         sliderHP = mySliderHP.GetComponent<Slider>();
-        tilemap = GameObject.FindGameObjectWithTag("Reve");
+        //tilemapD = GameObject.FindGameObjectWithTag("Reve");
+        //tilemapN = GameObject.FindGameObjectWithTag("Reve");
     }
 
     private void Update()
@@ -141,7 +143,9 @@ public class CharacterController : MonoBehaviour
      **************************************/
     void GoToNightmare()
     {
-        tilemap.GetComponent<TilemapRenderer>().sortingOrder = 0;
+        GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
+        tilemapD.GetComponent<TilemapRenderer>().enabled=false;
+        tilemapN.GetComponent<TilemapRenderer>().enabled = true;
         reve = false;
 
         reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
@@ -177,7 +181,9 @@ public class CharacterController : MonoBehaviour
      *********************************/
     void GoToDream()
     {
-        tilemap.GetComponent<TilemapRenderer>().sortingOrder = 2;
+        GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
+        tilemapD.GetComponent<TilemapRenderer>().enabled = true;
+        tilemapN.GetComponent<TilemapRenderer>().enabled = false;
         reve = true;
 
         reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
@@ -217,6 +223,14 @@ public class CharacterController : MonoBehaviour
         if(hp <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "DeathZone")
+        {
+            Destroy(gameObject,0.2f); //Enlever le delai lorsque que y'aura l'animation
         }
     }
 

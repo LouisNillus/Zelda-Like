@@ -53,8 +53,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499354125898780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.65, y: 0.78, z: 0}
-  m_LocalScale: {x: 9.944427, y: 9.944427, z: 9.944427}
+  m_LocalPosition: {x: 0.103, y: 2.056, z: 0}
+  m_LocalScale: {x: 1.7566, y: 1.7566, z: 1.7566}
   m_Children: []
   m_Father: {fileID: 4503842881419860}
   m_RootOrder: 0
@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487097893247406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8400002, y: -0.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.4399999, y: -1.5699999, z: 0}
+  m_LocalScale: {x: 0.5708523, y: 0.5708523, z: 0.5708523}
   m_Children:
   - {fileID: 4052337848690004}
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499354125898780}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -92,7 +92,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61057881915773972
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -105,10 +105,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000140070915, y: -0.07828599}
+  m_Offset: {x: -0.0018388629, y: -0.013816364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51, y: 0.2}
     oldSize: {x: 0.23, y: 0.32}
     newSize: {x: 0.9, y: 1.15}
     adaptiveTilingThreshold: 0.5
@@ -116,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1491704, y: 0.16347355}
+  m_Size: {x: 0.14541247, y: 0.10112603}
   m_EdgeRadius: 0
 --- !u!95 &95306031144644218
 Animator:
@@ -147,15 +147,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5ac09ff2ecbc14a9ec52c9faac3886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 1
   hp: 3
   damage: 1
   dialogueHasStarted: 0
   reve: 0
-  tilemap: {fileID: 0}
+  pushPower: 2
+  weight: 6
+  tilemapD: {fileID: 0}
+  tilemapN: {fileID: 0}
   dialogueManagerObject: {fileID: 0}
   dialogueTriggerObject: {fileID: 0}
   mySliderHP: {fileID: 0}
+  seeAbility: {fileID: 0}
+  notSeeAbility: {fileID: 0}
 --- !u!212 &212228393212531132
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -190,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: abd44cc32524b074991429b8d620223a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
+
     public GameObject player;
     public GameObject CubeD;
     public GameObject fluff;
@@ -50,7 +51,7 @@ public class CameraFollow : MonoBehaviour
 
                 if (bSpawnEnemy == true)
                 {
-                    PuzzleEnemy();
+                    StartCoroutine(PuzzleAOE());
                     bSpawnEnemy = false;
                 }
             }
@@ -71,8 +72,9 @@ public class CameraFollow : MonoBehaviour
         GameObject SpawnEnemy4 = Instantiate(fluff, new Vector2(0.5f, -2f), Quaternion.identity);
     }
 
-    void PuzzleAOE()
+    IEnumerator PuzzleAOE()
     {
-
+        yield return new WaitForSeconds(2f);
+        GameObject.Find("AOE").GetComponent<AOESystem>().PlayAOEPuzzle();
     }
 }
