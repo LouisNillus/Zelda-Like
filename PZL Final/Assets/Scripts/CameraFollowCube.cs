@@ -21,5 +21,5 @@ public class CameraFollowCube : MonoBehaviour
         {
             transform.position = CubeD.transform.position + offsetCube;
         }
-    }
+    }  
 }
