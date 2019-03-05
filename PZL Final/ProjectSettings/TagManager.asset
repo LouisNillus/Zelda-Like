@@ -8,11 +8,13 @@ TagManager:
   - Ennemy
   - CeQuiApparaitEnCauchemar
   - CeQuiApparaitEnReve
+  - ParalaxBackground
   - Enemy
   - Reve
   - VerticalMovingObject
   - HorizontalMovingObject
   - DeathZone
+  - GameMaster
   layers:
   - Default
   - TransparentFX
@@ -22,15 +24,15 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Reve
+  - Cauchemar
+  - Walls
+  - Enemy
+  - ParticleWall
+  - ParalaxBackground
   - Items
   - VideItems
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

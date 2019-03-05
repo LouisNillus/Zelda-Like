@@ -19,11 +19,13 @@ public class CharacterController : MonoBehaviour
     public int damage = 1;
     public bool dialogueHasStarted = false;
     public bool reve = true;
+    public bool isKilled = false;
 
     public int pushPower = 2;
     public int weight = 6;
 
     private Rigidbody2D rigidBody;
+    private GameMaster gameMaster;
 
     Animator animator;
     DialogueManager dialogueManager;
@@ -218,11 +220,22 @@ public class CharacterController : MonoBehaviour
     /*********************************************
      * Condition de Mort (Animation a rajouter)  *
      *********************************************/
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        if (collision.tag == "DeathZone")
+        {
+            transform.position = gameMaster.lastCheckpointPos;
+            isKilled = true;
+        }
+    }
+
     void isDead(int hp)
     {
         if(hp <= 0)
         {
-            Destroy(gameObject);
+            transform.position = gameMaster.lastCheckpointPos;
+            isKilled = true;
         }
     }
 
