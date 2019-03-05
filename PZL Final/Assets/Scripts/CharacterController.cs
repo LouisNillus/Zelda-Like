@@ -71,13 +71,13 @@ public class CharacterController : MonoBehaviour
 
         //sliderHP.value = hp;
 
-        if(Input.GetKeyDown(KeyCode.Joystick1Button0) && dialogueHasStarted == false)
+        if(Input.GetKeyDown(KeyCode.Joystick1Button2) && dialogueHasStarted == false)
         {
             dialogueTrigger = dialogueTriggerObject.GetComponent<DialogueTrigger>();
             dialogueTrigger.TriggerDialogue();
             dialogueHasStarted = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Joystick1Button0) && dialogueHasStarted == true)
+        else if (Input.GetKeyDown(KeyCode.Joystick1Button2) && dialogueHasStarted == true)
         {
             dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
             dialogueManager.DisplayNextSentence();

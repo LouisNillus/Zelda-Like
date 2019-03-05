@@ -47,6 +47,7 @@ public class AbilityManager : MonoBehaviour
     {
         if (myPlayer.reve == true)
         {
+            Debug.Log("GPS");
             nightmareAbilitySelector.enabled = false;
             dreamAbilitySelector.enabled = true;
         }

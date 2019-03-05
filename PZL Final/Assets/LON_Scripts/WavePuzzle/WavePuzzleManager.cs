@@ -57,7 +57,7 @@ public class WavePuzzleManager : MonoBehaviour
     {
         if (collision.tag == "Player" && puzzleEnded == false)
         {
-            pressX.enabled = false;
+            pressX.enabled = true;
         }
     }
 

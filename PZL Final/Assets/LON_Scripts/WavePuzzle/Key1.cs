@@ -11,8 +11,8 @@ public class Key1 : MonoBehaviour
     public Key3 key3;
     public Key4 key4;
 
-    public List<AudioClip> DongSoundsList = new List<AudioClip>();
     public AudioSource keyAudio;
+    public List<AudioClip> DongSoundsList = new List<AudioClip>();
 
     public WavePuzzleManager wavePuzzleManager;
 
