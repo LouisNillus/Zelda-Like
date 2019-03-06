@@ -16,7 +16,6 @@ public class GPSAbility : MonoBehaviour
     private AIDestinationSetter targetManager;
 
     // Booléens GPS
-    public bool canGPS = true;
     public bool isLaunching = false;
 
     public List<Transform> waypoints = new List<Transform>();

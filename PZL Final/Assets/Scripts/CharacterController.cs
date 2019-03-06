@@ -145,7 +145,7 @@ public class CharacterController : MonoBehaviour
      **************************************/
     void GoToNightmare()
     {
-        GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
+        //GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
         tilemapD.GetComponent<TilemapRenderer>().enabled=false;
         tilemapN.GetComponent<TilemapRenderer>().enabled = true;
         reve = false;
@@ -159,10 +159,15 @@ public class CharacterController : MonoBehaviour
             {
                 reveObject.GetComponent<SpriteRenderer>().enabled = false;
             }
-            if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
+            else if (reveObject.GetComponent<ParticleSystem>().isPlaying == true)
+            {
+                reveObject.GetComponent<ParticleSystem>().Stop();
+            }
+            if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD" && reveObject.name.Contains("KEY") == false) // Faire une liste pour les exceptions (optimisation)
             {
                 reveObject.GetComponent<BoxCollider2D>().enabled = false;
             }
+
         }
 
         foreach (GameObject cauchemarObject in cauchemarObjects) // Pour chaque object avec le tag "CeQuiApparaitEnCauchemar", j'active le spriteRenderer et desactive le isTrigger
@@ -171,10 +176,15 @@ public class CharacterController : MonoBehaviour
             {
                 cauchemarObject.GetComponent<SpriteRenderer>().enabled = true;
             }
+            else if (cauchemarObject.GetComponent<ParticleSystem>().isPlaying == false)
+            {
+                cauchemarObject.GetComponent<ParticleSystem>().Play();
+            }
             if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
             {
                 cauchemarObject.GetComponent<BoxCollider2D>().enabled = true;
             }
+
         }
     }
 
@@ -183,7 +193,7 @@ public class CharacterController : MonoBehaviour
      *********************************/
     void GoToDream()
     {
-        GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
+        //GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
         tilemapD.GetComponent<TilemapRenderer>().enabled = true;
         tilemapN.GetComponent<TilemapRenderer>().enabled = false;
         reve = true;
@@ -198,10 +208,15 @@ public class CharacterController : MonoBehaviour
             {
                 cauchemarObject.GetComponent<SpriteRenderer>().enabled = false;
             }
+            else if (cauchemarObject.GetComponent<ParticleSystem>().isPlaying == true)
+            {
+                cauchemarObject.GetComponent<ParticleSystem>().Stop();
+            }
             if (cauchemarObject.GetComponent<BoxCollider2D>() != null && cauchemarObject.name != "CubeN")
             {
                 cauchemarObject.GetComponent<BoxCollider2D>().enabled = false;
             }
+
         }
 
         foreach (GameObject reveObject in reveObjects) // Pour chaque object avec le tag "CeQuiApparaitEnReve", j'active le spriteRenderer et desactive le isTrigger
@@ -210,10 +225,15 @@ public class CharacterController : MonoBehaviour
             {
                 reveObject.GetComponent<SpriteRenderer>().enabled = true;
             }
+            else if (reveObject.GetComponent<ParticleSystem>().isPlaying == false)
+            {
+                reveObject.GetComponent<ParticleSystem>().Play();
+            }
             if (reveObject.GetComponent<BoxCollider2D>() != null && reveObject.name != "CubeD")
             {
                 reveObject.GetComponent<BoxCollider2D>().enabled = true;
             }
+
         }
     }
 
@@ -222,7 +242,7 @@ public class CharacterController : MonoBehaviour
      *********************************************/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        //gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         if (collision.tag == "DeathZone")
         {
             transform.position = gameMaster.lastCheckpointPos;
@@ -239,13 +259,13 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "DeathZone")
         {
             Destroy(gameObject,0.2f); //Enlever le delai lorsque que y'aura l'animation
         }
-    }
+    }*/
 
 
     /***************************
