@@ -52,7 +52,7 @@ public class Respawn : MonoBehaviour
         newBox.GetComponent<Respawn>().cubeD = SaveD;
         newBox.GetComponent<Respawn>().cubeN = SaveN;
 
-        if (GameObject.Find("CharacterAnim").GetComponent<CharacterController>().reve == false)
+        if (GameObject.Find("Live_Dream").GetComponent<CharacterController>().reve == false)
         {
             newBox.GetComponent<SpriteRenderer>().enabled = false;
             newBox2.GetComponent<SpriteRenderer>().enabled = true;

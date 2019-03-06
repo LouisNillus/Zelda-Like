@@ -222,7 +222,7 @@ public class CharacterController : MonoBehaviour
     /*********************************************
      * Condition de Mort (Animation a rajouter)  *
      *********************************************/
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         if (collision.tag == "DeathZone")
@@ -230,7 +230,7 @@ public class CharacterController : MonoBehaviour
             transform.position = gameMaster.lastCheckpointPos;
             isKilled = true;
         }
-    }
+    }*/
 
     void isDead(int hp)
     {

@@ -38,7 +38,6 @@ public class Rippleeffect : MonoBehaviour
         if (maxAmount > 0 || friction > 0)
         {
             StartCoroutine(StopRipple());
-            Debug.Log(maxAmount + " " + friction);
         }
     }
 

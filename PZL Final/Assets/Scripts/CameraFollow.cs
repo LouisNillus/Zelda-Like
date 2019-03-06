@@ -75,6 +75,6 @@ public class CameraFollow : MonoBehaviour
     IEnumerator PuzzleAOE()
     {
         yield return new WaitForSeconds(2f);
-        GameObject.Find("AOE").GetComponent<AOESystem>().PlayAOEPuzzle();
+        //GameObject.Find("AOE").GetComponent<AOESystem>().PlayAOEPuzzle();
     }
 }
