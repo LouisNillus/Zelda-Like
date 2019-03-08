@@ -34,6 +34,9 @@ public class CharacterController : MonoBehaviour
 
     public GameObject tilemapD;
     public GameObject tilemapN;
+    public GameObject tilemapDDeep;
+    public GameObject tilemapNDeep;
+
     public GameObject dialogueManagerObject;
     public GameObject dialogueTriggerObject;
     public GameObject mySliderHP;
@@ -145,9 +148,11 @@ public class CharacterController : MonoBehaviour
      **************************************/
     void GoToNightmare()
     {
-        GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
-        tilemapD.GetComponent<TilemapRenderer>().enabled=false;
+        //GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
+        tilemapD.GetComponent<TilemapRenderer>().enabled = false;
         tilemapN.GetComponent<TilemapRenderer>().enabled = true;
+        tilemapDDeep.GetComponent<TilemapRenderer>().enabled = false;
+        tilemapNDeep.GetComponent<TilemapRenderer>().enabled = true;
         reve = false;
 
         reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
@@ -183,9 +188,11 @@ public class CharacterController : MonoBehaviour
      *********************************/
     void GoToDream()
     {
-        GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
+        //GameObject.Find("Main Camera").GetComponent<Rippleeffect>().RippleEff(transform, 10f, 1f);
         tilemapD.GetComponent<TilemapRenderer>().enabled = true;
         tilemapN.GetComponent<TilemapRenderer>().enabled = false;
+        tilemapDDeep.GetComponent<TilemapRenderer>().enabled = true;
+        tilemapNDeep.GetComponent<TilemapRenderer>().enabled = false;
         reve = true;
 
         reveObjects = GameObject.FindGameObjectsWithTag("CeQuiApparaitEnReve");
@@ -220,15 +227,16 @@ public class CharacterController : MonoBehaviour
     /*********************************************
      * Condition de Mort (Animation a rajouter)  *
      *********************************************/
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        //gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        Debug.Log("Master desactivé");
         if (collision.tag == "DeathZone")
         {
             transform.position = gameMaster.lastCheckpointPos;
             isKilled = true;
         }
-    }
+    }*/
 
     void isDead(int hp)
     {

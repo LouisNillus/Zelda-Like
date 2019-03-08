@@ -59,8 +59,9 @@ public class CameraFollow : MonoBehaviour
         else
         {
             mainCamera.enabled = true;
-            cubeCamera.enabled = false;
-            playerCamera.enabled = false;
+            transform.position = player.transform.position + offset;
+            //cubeCamera.enabled = false;
+            //playerCamera.enabled = false;
         }
     }
 
