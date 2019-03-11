@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Key2 : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Key2 : MonoBehaviour
     public WavePuzzleManager wavePuzzleManager;
 
     public List<Transform> Key2Bounds = new List<Transform>();
+
     // Start
     void Start()
     {

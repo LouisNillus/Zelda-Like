@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class WavePuzzleManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class WavePuzzleManager : MonoBehaviour
     public Key2 key2;
     public Key3 key3;
     public Key4 key4;
-
+    
     private int rotationSpeed = 10;
     private float angle = 0f;
 
@@ -30,14 +31,19 @@ public class WavePuzzleManager : MonoBehaviour
     public SpriteRenderer pressX;
     public ParticleSystem waveParticles;
     public Transform waveParticlesTransform;
+    public CharacterController myPlayer;
 
     public List<AudioClip> DongSoundsList = new List<AudioClip>();
 
     public AudioSource winningSound;
     public AudioSource winningSound2;
 
+    public AudioMixer myMixer;
+
     void Update()
     {
+        PitchTweaker();
+
         StartCoroutine("WaitForNewNote");
         StartCoroutine("WaitForNewNote2");
         Emitter();
@@ -133,8 +139,12 @@ public class WavePuzzleManager : MonoBehaviour
 
     IEnumerator WaitForNewNote()
     {
-        if (wavePuzzleComplete == true)
+
+        // Musique de fin Reve
+        if (wavePuzzleComplete == true && myPlayer.reve == true)
         {
+            myMixer.SetFloat("MyPitch", 1f);
+
             puzzleEnded = true;
 
             isPlayingWinningSong = true;
@@ -147,12 +157,33 @@ public class WavePuzzleManager : MonoBehaviour
                 winningSound.Play();               
             }
         }
+
+        //Musique de fin Cauchermar
+        else if (wavePuzzleComplete == true && myPlayer.reve == false)
+        {
+            myMixer.SetFloat("MyPitch", 1.60f);
+
+            puzzleEnded = true;
+            isPlayingWinningSong = true;
+
+            for (int i = 0; i < DongSoundsList.Count / 2; i++)
+            {
+                wavePuzzleComplete = false;
+                yield return new WaitForSeconds(1f);
+
+                winningSound.clip = DongSoundsList[Random.Range(0, DongSoundsList.Count)];
+                winningSound.Play();
+            }
+        }
     }
 
     IEnumerator WaitForNewNote2()
     {
-        if (isPlayingWinningSong == true)
+        //Musique décalée Reve
+        if (isPlayingWinningSong == true && myPlayer.reve == true)
         {
+            myMixer.SetFloat("MyPitch", 1f);
+
             for (int j = 0; j < DongSoundsList.Count/2; j++)
             {
                 isPlayingWinningSong = false;
@@ -164,6 +195,36 @@ public class WavePuzzleManager : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f);
             }
+        }
+
+        //Musique décalée Cauchemar
+        else if (isPlayingWinningSong == true && myPlayer.reve == false)
+        {
+            myMixer.SetFloat("MyPitch", 1.60f);
+
+            for (int j = 0; j < DongSoundsList.Count / 2; j++)
+            {
+                isPlayingWinningSong = false;
+                wavePuzzleComplete = false;
+                yield return new WaitForSeconds(0.5f);
+
+                winningSound2.clip = DongSoundsList[Random.Range(0, DongSoundsList.Count)];
+                winningSound2.Play();
+
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
+
+    public void PitchTweaker()
+    {
+        if (myPlayer.reve == true)
+        {
+            myMixer.SetFloat("MyPitch", 1f);
+        }
+        else if (myPlayer.reve == false)
+        {
+            myMixer.SetFloat("MyPitch", 1.60f);
         }
     }
 

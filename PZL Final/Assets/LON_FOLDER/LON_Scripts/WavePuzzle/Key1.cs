@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
 
 public class Key1 : MonoBehaviour
 {
@@ -11,21 +13,24 @@ public class Key1 : MonoBehaviour
     public Key3 key3;
     public Key4 key4;
 
-    public List<AudioClip> DongSoundsList = new List<AudioClip>();
     public AudioSource keyAudio;
+    public List<AudioClip> DongSoundsList = new List<AudioClip>();
 
     public WavePuzzleManager wavePuzzleManager;
 
     public List<Transform> Key1Bounds = new List<Transform>();
+
     // Start
     void Start ()
     {
-		
+
 	}
 	
 	// Update
 	void Update ()
     {
+        //PitchTweaker();
+
         //BoundUp
         if (this.transform.position.y > Key1Bounds[0].position.y)
         {
@@ -53,5 +58,4 @@ public class Key1 : MonoBehaviour
             wavePuzzleManager.ResetPuzzle();
         }
     }
-
 }

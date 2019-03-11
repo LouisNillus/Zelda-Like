@@ -15,20 +15,12 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: 12ae521169202014fbd0e6e05bb93f8d
-    name: Main Pitch
-  - guid: 0d020521d5d9ce1408036cc082714ed9
-    name: Pitch
-  - guid: 88161f8510f32c242a670cfd6a925d78
-    name: Overlap
-  - guid: 3ac96f9c9f6e77a48b6577889cf8e4b3
-    name: FFT size
-  - guid: 3f33b2134135bc84aab8d7fad1215493
-    name: Max channels
+  - guid: acb5c2a93ab284f4f890aa1a9c55dfe1
+    name: MyPitch
   m_AudioMixerGroupViews:
   - guids:
     - 5e4b5659b64686b49a36663d8248e49a
-    - e54d715827323c84b973d4349638996f
+    - d576831b7ea2bc243b0ba6d39a933eac
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -41,7 +33,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 5e4b5659b64686b49a36663d8248e49a
   m_Children:
-  - {fileID: 243438454254284970}
+  - {fileID: 243222974904617208}
   m_Volume: 4b18d353e1e84eb49bffa6d6050b5930
   m_Pitch: f0909bb3bb6ef354bb48a4d5a67ec12c
   m_Effects:
@@ -98,6 +90,7 @@ AudioMixerSnapshotController:
     9d5d54d75e4c4794f818d0b390e1b858: 118.3
     cb5c437812281f64ca08f9a219aaf1a0: 0
     c8337dc89bc1e684dabe11807fa62c15: 22000
+    acb5c2a93ab284f4f890aa1a9c55dfe1: 1.598
     46bf598a9465bef40ae31564c761c0fd: 5829
     373ea7fa4153eb3419e3efe731d2f3ad: 0.5
     289bd85b9b8b2224d8a47f376a0e50e6: 0.97
@@ -112,55 +105,55 @@ AudioMixerSnapshotController:
     6063627f7ead01c47b33a5470507bb5d: 96
     9456b27f4065c2f4cbf91185debf1566: 200
   m_TransitionOverrides: {}
---- !u!243 &243438454254284970
+--- !u!243 &243222974904617208
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: DreamSong
+  m_Name: Dong
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: e54d715827323c84b973d4349638996f
+  m_GroupID: d576831b7ea2bc243b0ba6d39a933eac
   m_Children: []
-  m_Volume: cb5c437812281f64ca08f9a219aaf1a0
-  m_Pitch: 12ae521169202014fbd0e6e05bb93f8d
+  m_Volume: 4f58e33a0631b274998adaef1d1ad963
+  m_Pitch: d380c59500ef8054fbdf58617cdfc89c
   m_Effects:
-  - {fileID: 244829932836474260}
-  - {fileID: 244699090737866592}
-  m_UserColorIndex: 6
+  - {fileID: 244305716260785278}
+  - {fileID: 244551995641736404}
+  m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
---- !u!244 &244699090737866592
+--- !u!244 &244305716260785278
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_EffectID: 5123d4f41c7cd8c4aafb5cc3b050f9f5
-  m_EffectName: Pitch Shifter
-  m_MixLevel: e17e369310b79694a9ba5b41cbec78b6
-  m_Parameters:
-  - m_ParameterName: Pitch
-    m_GUID: 0d020521d5d9ce1408036cc082714ed9
-  - m_ParameterName: FFT size
-    m_GUID: 3ac96f9c9f6e77a48b6577889cf8e4b3
-  - m_ParameterName: Overlap
-    m_GUID: 88161f8510f32c242a670cfd6a925d78
-  - m_ParameterName: Max channels
-    m_GUID: 3f33b2134135bc84aab8d7fad1215493
+  m_EffectID: a42c13684be21ae49a30569397576c4b
+  m_EffectName: Attenuation
+  m_MixLevel: 5bc0bfaad05ab4244a5d272bf6b93112
+  m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!244 &244829932836474260
+--- !u!244 &244551995641736404
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_EffectID: d5509038e303755438025c4d61b17eac
-  m_EffectName: Attenuation
-  m_MixLevel: 35ea37b825e80a24189d5f62003c7c23
-  m_Parameters: []
+  m_EffectID: ba61e6d7cf8ddbe4fadb69872e422a57
+  m_EffectName: Pitch Shifter
+  m_MixLevel: 31f5183c8a133074aa83771c1ca454f6
+  m_Parameters:
+  - m_ParameterName: Pitch
+    m_GUID: acb5c2a93ab284f4f890aa1a9c55dfe1
+  - m_ParameterName: FFT size
+    m_GUID: ca3dba5f32a262c43a87df96c0c385c2
+  - m_ParameterName: Overlap
+    m_GUID: 0e86c8349dc372246b0e051c5b5ed414
+  - m_ParameterName: Max channels
+    m_GUID: 72f8364d06286bc48b981fe60a1e413c
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
