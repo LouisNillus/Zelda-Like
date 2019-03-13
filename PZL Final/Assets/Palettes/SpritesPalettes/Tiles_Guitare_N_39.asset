@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Tiles_Guitare_N_39
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300078, guid: 28d980bbd8905ab4cb06d267db8d9605, type: 3}
+=======
+  m_Sprite: {fileID: 21300078, guid: d07a14f1ebbdf094ebb352c3823db8c9, type: 3}
+>>>>>>> Louis-Dev
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

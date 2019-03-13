@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Tiles_Partition_D_13
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300026, guid: 5ac419385abd5f7448a2d617ce1cbae8, type: 3}
+=======
+  m_Sprite: {fileID: 21300026, guid: 804b590928024884fb483f2df1dc05d8, type: 3}
+>>>>>>> Louis-Dev
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

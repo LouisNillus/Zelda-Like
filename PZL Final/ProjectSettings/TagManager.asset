@@ -10,11 +10,12 @@ TagManager:
   - CeQuiApparaitEnReve
   - ParalaxBackground
   - Enemy
-  - Reve
   - VerticalMovingObject
   - HorizontalMovingObject
   - DeathZone
   - GameMaster
+  - VerticalMovingObjectReve
+  - HorizontalMovingObjectReve
   layers:
   - Default
   - TransparentFX

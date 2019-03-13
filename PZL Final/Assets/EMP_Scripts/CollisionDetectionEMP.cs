@@ -7,6 +7,9 @@ public class CollisionDetectionEMP : MonoBehaviour
     [Range(0, 0.05f), SerializeField]
     private float movingSpeed = 0.02f;
 
+    [SerializeField]
+    private bool verticalMovingObject;
+
     // Start
     void Start ()
     {
@@ -25,26 +28,26 @@ public class CollisionDetectionEMP : MonoBehaviour
         if(collision.tag == "Player")
         {
             //Objet kinématique sur rail vertical
-            if (collision.gameObject.transform.position.y > this.transform.position.y && this.gameObject.tag == "VerticalMovingObject")
+            if (collision.gameObject.transform.position.y > this.transform.position.y && this.verticalMovingObject == true)
             {
                 GetDown();
             }
-            else if (collision.gameObject.transform.position.y < this.transform.position.y && this.gameObject.tag == "VerticalMovingObject")
+            else if (collision.gameObject.transform.position.y < this.transform.position.y && this.verticalMovingObject == true)
             {
                 GetUp();
             }
 
             //Objet kinématique sur rail horizontal
-            if (collision.gameObject.transform.position.x > this.transform.position.x && this.gameObject.tag == "HorizontalMovingObject")
+            if (collision.gameObject.transform.position.x > this.transform.position.x && this.verticalMovingObject == false)
             {
                 GetLeft();
             }
-            else if (collision.gameObject.transform.position.x < this.transform.position.x && this.gameObject.tag == "HorizontalMovingObject")
+            else if (collision.gameObject.transform.position.x < this.transform.position.x && this.verticalMovingObject == false)
             {
                 GetRight();
             }
-
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

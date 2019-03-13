@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 67eeea6ee2e05fa4bbb0040f10cf2ee0
+=======
+guid: fffd65a21d063364d9d6bf9557b80778
+>>>>>>> Louis-Dev
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
